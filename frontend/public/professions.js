@@ -217,41 +217,41 @@ function printProfessionDocument(professionCode, professionName, requirements) {
     // حساب المسافات بشكل ديناميكي حسب عدد البنود
     const reqCount = actualRequirements.length;
     let itemMargin = '5px';
-    let itemPadding = '6px';
-    let itemPaddingRight = '32px';
-    let fontSize = '11px';
+    let itemPadding = '7px';
+    let itemPaddingRight = '45px';  // مسافة كبيرة جداً من الرقم
+    let fontSize = '11.5px';
     let lineHeight = '1.65';
-    let titleSize = '14px';
+    let titleSize = '14.5px';
     
     // تعديل المسافات حسب عدد البنود
     if (reqCount <= 7) {
-        itemMargin = '9px';
-        itemPadding = '10px';
-        itemPaddingRight = '34px';
-        fontSize = '12.5px';
+        itemMargin = '10px';
+        itemPadding = '11px';
+        itemPaddingRight = '50px';  // مسافة كبيرة جداً
+        fontSize = '13px';
         lineHeight = '1.75';
-        titleSize = '15px';
+        titleSize = '16px';
     } else if (reqCount <= 9) {
-        itemMargin = '7px';
-        itemPadding = '8px';
-        itemPaddingRight = '33px';
-        fontSize = '11.5px';
+        itemMargin = '8px';
+        itemPadding = '9px';
+        itemPaddingRight = '48px';
+        fontSize = '12px';
         lineHeight = '1.7';
-        titleSize = '14.5px';
+        titleSize = '15px';
     } else if (reqCount <= 10) {
         itemMargin = '6px';
-        itemPadding = '7px';
-        itemPaddingRight = '32px';
-        fontSize = '11px';
+        itemPadding = '8px';
+        itemPaddingRight = '46px';
+        fontSize = '11.5px';
         lineHeight = '1.65';
-        titleSize = '14px';
+        titleSize = '14.5px';
     } else {
         itemMargin = '5px';
-        itemPadding = '6px';
-        itemPaddingRight = '30px';
-        fontSize = '10.5px';
+        itemPadding = '7px';
+        itemPaddingRight = '45px';
+        fontSize = '11px';
         lineHeight = '1.6';
-        titleSize = '13.5px';
+        titleSize = '14px';
     }
     
     const printContent = `
@@ -380,14 +380,14 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     top: ${itemPadding};
                     background: #1B2A41;
                     color: white;
-                    width: 22px;
-                    height: 22px;
+                    width: 24px;
+                    height: 24px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: bold;
-                    font-size: 10px;
+                    font-size: 11px;
                     box-shadow: 0 2px 4px rgba(27, 42, 65, 0.3);
                 }
                 .note-box {
