@@ -217,115 +217,115 @@ function printProfessionDocument(professionCode, professionName, requirements) {
             <meta charset="UTF-8">
             <title>الأوراق المطلوبة - ${professionName}</title>
             <style>
-                @page { size: A4; margin: 8mm; }
+                @page { size: A4; margin: 12mm; }
                 * { margin: 0; padding: 0; box-sizing: border-box; }
                 body {
                     font-family: 'Arial', 'Tahoma', sans-serif;
                     direction: rtl;
                     text-align: right;
-                    line-height: 1.25;
+                    line-height: 1.4;
                     color: #1B2A41;
                     background: white;
-                    font-size: 9px;
+                    font-size: 10px;
                 }
                 .print-header {
                     background: linear-gradient(135deg, #1B2A41 0%, #2a3f5f 100%);
                     color: white;
-                    padding: 5px 10px;
+                    padding: 8px 15px;
                     text-align: center;
-                    border-radius: 3px;
-                    margin-bottom: 6px;
+                    border-radius: 4px;
+                    margin-bottom: 10px;
                 }
                 .print-header h1 {
-                    font-size: 11px;
-                    margin-bottom: 1px;
+                    font-size: 14px;
+                    margin-bottom: 3px;
                     font-weight: bold;
                 }
                 .print-header .subtitle {
                     color: #C9A35E;
-                    font-size: 7.5px;
+                    font-size: 9px;
                     font-weight: bold;
-                    margin-bottom: 3px;
+                    margin-bottom: 4px;
                 }
                 .office-info {
                     background: rgba(255,255,255,0.1);
-                    padding: 3px;
-                    border-radius: 2px;
-                    font-size: 6.5px;
+                    padding: 4px;
+                    border-radius: 3px;
+                    font-size: 7.5px;
                     display: flex;
                     justify-content: space-around;
-                    gap: 3px;
+                    gap: 5px;
                 }
                 .document-title {
                     background: #C9A35E;
                     color: white;
-                    padding: 5px;
-                    margin: 4px 0;
-                    border-radius: 3px;
-                    font-size: 10.5px;
+                    padding: 6px;
+                    margin: 6px 0;
+                    border-radius: 4px;
+                    font-size: 11.5px;
                     font-weight: bold;
                     text-align: center;
                 }
                 .profession-info {
                     background: #f8f9fa;
-                    padding: 4px;
-                    margin: 3px 0;
+                    padding: 5px;
+                    margin: 5px 0;
                     border-right: 2px solid #C9A35E;
-                    border-radius: 2px;
-                    font-size: 7.5px;
+                    border-radius: 3px;
+                    font-size: 8.5px;
                     display: flex;
                     justify-content: space-between;
-                    gap: 6px;
+                    gap: 8px;
                 }
                 .profession-info strong { color: #1B2A41; }
                 .section-title {
                     color: #1B2A41;
-                    font-size: 10px;
+                    font-size: 11px;
                     font-weight: bold;
-                    margin: 6px 0 3px;
-                    padding-bottom: 2px;
+                    margin: 8px 0 5px;
+                    padding-bottom: 3px;
                     border-bottom: 2px solid #C9A35E;
                 }
                 .requirements-list {
-                    margin: 3px 0;
+                    margin: 5px 0;
                     padding: 0;
                     counter-reset: item;
                 }
                 .requirements-list li {
-                    padding: 3px 3px 3px 20px;
-                    margin: 2px 0;
+                    padding: 4px 4px 4px 22px;
+                    margin: 3px 0;
                     border-bottom: 1px solid #e5e7eb;
                     list-style: none;
                     position: relative;
-                    font-size: 8.5px;
-                    line-height: 1.25;
+                    font-size: 9.5px;
+                    line-height: 1.4;
                 }
                 .requirements-list li:before {
                     content: counter(item);
                     counter-increment: item;
                     position: absolute;
                     right: 0;
-                    top: 2px;
+                    top: 3px;
                     background: #C9A35E;
                     color: white;
-                    width: 15px;
-                    height: 15px;
+                    width: 16px;
+                    height: 16px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: bold;
-                    font-size: 7px;
+                    font-size: 7.5px;
                 }
                 .footer {
-                    margin-top: 6px;
-                    padding-top: 4px;
+                    margin-top: 8px;
+                    padding-top: 5px;
                     border-top: 1px solid #C9A35E;
                     text-align: center;
                     color: #64748b;
-                    font-size: 6.5px;
+                    font-size: 7px;
                 }
-                .footer p { margin: 1px 0; }
+                .footer p { margin: 2px 0; }
                 @media print {
                     body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
                 }
