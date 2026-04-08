@@ -363,8 +363,10 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     justify-content: space-evenly;
                 }
                 .requirements-list li {
-                    padding: ${itemPadding} ${itemPadding} ${itemPadding} ${itemPaddingRight};
+                    padding: ${itemPadding};
+                    padding-right: 0;
                     margin: ${itemMargin} 0;
+                    margin-right: 32px;
                     border-bottom: 1px solid #e5e7eb;
                     list-style: none;
                     position: relative;
@@ -376,18 +378,19 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     content: counter(item);
                     counter-increment: item;
                     position: absolute;
-                    right: 0;
-                    top: ${itemPadding};
+                    right: -32px;
+                    top: 50%;
+                    transform: translateY(-50%);
                     background: #1B2A41;
                     color: white;
-                    width: 24px;
-                    height: 24px;
+                    width: 26px;
+                    height: 26px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: bold;
-                    font-size: 11px;
+                    font-size: 12px;
                     box-shadow: 0 2px 4px rgba(27, 42, 65, 0.3);
                 }
                 .note-box {
