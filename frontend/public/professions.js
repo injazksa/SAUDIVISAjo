@@ -206,13 +206,43 @@ function getDefaultRequirements() {
     ];
 }
 
-// Enhanced print function with proper layout
+// Enhanced print function with RESPONSIVE & FLEXIBLE layout
 function printProfessionDocument(professionCode, professionName, requirements) {
     const printWindow = window.open('', '_blank');
     
     // فصل الملاحظة عن الأوراق
     let actualRequirements = requirements.filter(req => !req.includes('ملاحظة هامة'));
     let note = requirements.find(req => req.includes('ملاحظة هامة'));
+    
+    // حساب المسافات بشكل ديناميكي حسب عدد البنود
+    const reqCount = actualRequirements.length;
+    let itemMargin = '5px';
+    let itemPadding = '6px';
+    let fontSize = '10.5px';
+    let lineHeight = '1.6';
+    
+    // تعديل المسافات حسب عدد البنود
+    if (reqCount <= 7) {
+        itemMargin = '8px';
+        itemPadding = '9px';
+        fontSize = '11.5px';
+        lineHeight = '1.7';
+    } else if (reqCount <= 9) {
+        itemMargin = '6px';
+        itemPadding = '7px';
+        fontSize = '11px';
+        lineHeight = '1.65';
+    } else if (reqCount <= 10) {
+        itemMargin = '5px';
+        itemPadding = '6px';
+        fontSize = '10.5px';
+        lineHeight = '1.6';
+    } else {
+        itemMargin = '4px';
+        itemPadding = '5px';
+        fontSize = '10px';
+        lineHeight = '1.55';
+    }
     
     const printContent = `
         <!DOCTYPE html>
@@ -223,17 +253,25 @@ function printProfessionDocument(professionCode, professionName, requirements) {
             <style>
                 @page { 
                     size: A4; 
-                    margin: 18mm 15mm;
+                    margin: 0;
                 }
                 * { margin: 0; padding: 0; box-sizing: border-box; }
+                html, body {
+                    width: 210mm;
+                    height: 297mm;
+                    margin: 0;
+                    padding: 0;
+                }
                 body {
                     font-family: 'Arial', 'Tahoma', sans-serif;
                     direction: rtl;
                     text-align: right;
-                    line-height: 1.6;
                     color: #1B2A41;
                     background: white;
-                    font-size: 11px;
+                    padding: 15mm 12mm;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 297mm;
                 }
                 .print-header {
                     background: linear-gradient(135deg, #1B2A41 0%, #2a3f5f 100%);
@@ -241,7 +279,8 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     padding: 12px 18px;
                     text-align: center;
                     border-radius: 5px;
-                    margin-bottom: 15px;
+                    margin-bottom: 12px;
+                    flex-shrink: 0;
                 }
                 .print-header h1 {
                     font-size: 16px;
@@ -272,47 +311,60 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     font-size: 13px;
                     font-weight: bold;
                     text-align: center;
+                    flex-shrink: 0;
                 }
                 .profession-info {
                     background: #f8f9fa;
                     padding: 8px;
-                    margin: 8px 0;
+                    margin: 8px 0 10px;
                     border-right: 3px solid #C9A35E;
                     border-radius: 4px;
                     font-size: 10px;
                     display: flex;
                     justify-content: space-between;
                     gap: 12px;
+                    flex-shrink: 0;
                 }
                 .profession-info strong { color: #1B2A41; }
                 .section-title {
                     color: #1B2A41;
                     font-size: 12px;
                     font-weight: bold;
-                    margin: 12px 0 8px;
+                    margin: 10px 0 8px;
                     padding-bottom: 5px;
                     border-bottom: 2px solid #C9A35E;
+                    flex-shrink: 0;
+                }
+                .content-wrapper {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 0;
                 }
                 .requirements-list {
-                    margin: 8px 0;
+                    margin: 0;
                     padding: 0;
                     counter-reset: item;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
                 }
                 .requirements-list li {
-                    padding: 6px 6px 6px 26px;
-                    margin: 5px 0;
+                    padding: ${itemPadding} ${itemPadding} ${itemPadding} 26px;
+                    margin: ${itemMargin} 0;
                     border-bottom: 1px solid #e5e7eb;
                     list-style: none;
                     position: relative;
-                    font-size: 10.5px;
-                    line-height: 1.6;
+                    font-size: ${fontSize};
+                    line-height: ${lineHeight};
                 }
                 .requirements-list li:before {
                     content: counter(item);
                     counter-increment: item;
                     position: absolute;
                     right: 0;
-                    top: 5px;
+                    top: ${itemPadding};
                     background: #C9A35E;
                     color: white;
                     width: 20px;
@@ -329,25 +381,34 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     border: 2px solid #C9A35E;
                     border-radius: 5px;
                     padding: 10px;
-                    margin: 12px 0;
+                    margin: 10px 0;
                     font-size: 9.5px;
                     line-height: 1.5;
+                    flex-shrink: 0;
                 }
                 .note-box strong {
                     color: #C9A35E;
                     font-size: 10.5px;
                 }
                 .footer {
-                    margin-top: 15px;
+                    margin-top: 10px;
                     padding-top: 8px;
                     border-top: 1px solid #C9A35E;
                     text-align: center;
                     color: #64748b;
                     font-size: 8px;
+                    flex-shrink: 0;
                 }
                 .footer p { margin: 2px 0; }
                 @media print {
-                    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+                    html, body {
+                        width: 210mm;
+                        height: 297mm;
+                    }
+                    body { 
+                        print-color-adjust: exact; 
+                        -webkit-print-color-adjust: exact;
+                    }
                 }
             </style>
         </head>
@@ -370,17 +431,19 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                 <span><strong>التاريخ:</strong> ${new Date().toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
             </div>
             
-            <h2 class="section-title">📋 قائمة الأوراق والمستندات المطلوبة:</h2>
-            <ul class="requirements-list">
-                ${actualRequirements.map(req => `<li>${req}</li>`).join('')}
-            </ul>
-            
-            ${note ? `
-            <div class="note-box">
-                <strong>⚠️ ملاحظة هامة:</strong><br>
-                ${note.replace('ملاحظة هامة جداً (التصديقات الخارجية): ', '')}
+            <div class="content-wrapper">
+                <h2 class="section-title">📋 قائمة الأوراق والمستندات المطلوبة:</h2>
+                <ul class="requirements-list">
+                    ${actualRequirements.map(req => `<li>${req}</li>`).join('')}
+                </ul>
+                
+                ${note ? `
+                <div class="note-box">
+                    <strong>⚠️ ملاحظة هامة:</strong><br>
+                    ${note.replace('ملاحظة هامة جداً (التصديقات الخارجية): ', '')}
+                </div>
+                ` : ''}
             </div>
-            ` : ''}
             
             <div class="footer">
                 <p><strong>مكتب تأشيرات السعودية في الأردن</strong> | نخدمكم بأعلى معايير الدقة والاحترافية</p>
