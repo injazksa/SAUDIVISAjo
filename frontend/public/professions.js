@@ -109,19 +109,30 @@ function createProfessionCard(profession) {
     `;
 }
 
+// Normalize Arabic text for better search
+function normalizeArabic(text) {
+    if (!text) return '';
+    return text
+        .replace(/[أإآ]/g, 'ا')
+        .replace(/[ةه]/g, 'ه')
+        .replace(/ى/g, 'ي')
+        .toLowerCase();
+}
+
 // Filter professions based on search and category
 function filterProfessions() {
-    const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+    const searchTerm = document.getElementById('searchInput').value.trim();
     const selectedCategory = document.getElementById('categoryFilter').value;
     
     let filtered = professionsData;
     
     // Filter by search term
     if (searchTerm) {
+        const normalizedSearch = normalizeArabic(searchTerm);
         filtered = filtered.filter(profession => {
-            const name = (profession.profession_name_ar || profession.name || profession.professionName || '').toLowerCase();
+            const name = normalizeArabic(profession.profession_name_ar || profession.name || profession.professionName || '');
             const code = (profession.profession_code || profession.code || profession.professionCode || '').toLowerCase();
-            return name.includes(searchTerm) || code.includes(searchTerm);
+            return name.includes(normalizedSearch) || code.includes(searchTerm.toLowerCase());
         });
     }
     
@@ -206,187 +217,164 @@ function printProfessionDocument(professionCode, professionName, requirements) {
             <meta charset="UTF-8">
             <title>الأوراق المطلوبة - ${professionName}</title>
             <style>
-                @page {
-                    size: A4;
-                    margin: 15mm;
-                }
-                * {
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
+                @page { size: A4; margin: 12mm; }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
                 body {
                     font-family: 'Arial', 'Tahoma', sans-serif;
                     direction: rtl;
                     text-align: right;
-                    line-height: 1.8;
+                    line-height: 1.5;
                     color: #1B2A41;
                     background: white;
+                    font-size: 11px;
                 }
                 .print-header {
                     background: linear-gradient(135deg, #1B2A41 0%, #2a3f5f 100%);
                     color: white;
-                    padding: 30px;
+                    padding: 12px 16px;
                     text-align: center;
-                    border-radius: 12px;
-                    margin-bottom: 30px;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                    border-radius: 6px;
+                    margin-bottom: 12px;
                 }
                 .print-header h1 {
-                    font-size: 32px;
-                    margin-bottom: 8px;
+                    font-size: 16px;
+                    margin-bottom: 3px;
                     font-weight: bold;
                 }
                 .print-header .subtitle {
-                    color: #D4AF37;
-                    font-size: 20px;
+                    color: #C9A35E;
+                    font-size: 11px;
                     font-weight: bold;
-                    margin-bottom: 20px;
-                    letter-spacing: 1px;
+                    margin-bottom: 6px;
                 }
                 .office-info {
                     background: rgba(255,255,255,0.1);
-                    padding: 15px;
-                    border-radius: 8px;
-                    font-size: 14px;
-                    line-height: 1.8;
-                }
-                .office-info div {
-                    margin: 5px 0;
+                    padding: 6px;
+                    border-radius: 3px;
+                    font-size: 9px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 3px;
                 }
                 .document-title {
-                    background: #D4AF37;
+                    background: #C9A35E;
                     color: white;
-                    padding: 20px;
-                    margin: 30px 0 20px;
-                    border-radius: 10px;
-                    font-size: 24px;
+                    padding: 10px;
+                    margin: 10px 0 8px;
+                    border-radius: 5px;
+                    font-size: 14px;
                     font-weight: bold;
                     text-align: center;
-                    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
                 }
                 .profession-info {
                     background: #f8f9fa;
-                    padding: 20px;
-                    margin: 20px 0;
-                    border-right: 5px solid #D4AF37;
-                    border-radius: 8px;
+                    padding: 10px;
+                    margin: 8px 0;
+                    border-right: 3px solid #C9A35E;
+                    border-radius: 3px;
+                    font-size: 10px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    gap: 6px;
                 }
-                .profession-info strong {
-                    color: #1B2A41;
-                    font-weight: bold;
-                }
+                .profession-info strong { color: #1B2A41; }
                 .section-title {
                     color: #1B2A41;
-                    font-size: 22px;
+                    font-size: 13px;
                     font-weight: bold;
-                    margin: 30px 0 15px;
-                    padding-bottom: 10px;
-                    border-bottom: 3px solid #D4AF37;
+                    margin: 12px 0 6px;
+                    padding-bottom: 5px;
+                    border-bottom: 2px solid #C9A35E;
                 }
                 .requirements-list {
-                    margin: 20px 0;
+                    margin: 8px 0;
                     padding: 0;
                     counter-reset: item;
                 }
                 .requirements-list li {
-                    padding: 15px;
-                    margin: 10px 0;
+                    padding: 6px 6px 6px 28px;
+                    margin: 4px 0;
                     border-bottom: 1px solid #e5e7eb;
                     list-style: none;
                     position: relative;
-                    padding-right: 40px;
+                    font-size: 10px;
+                    line-height: 1.4;
                 }
                 .requirements-list li:before {
                     content: counter(item);
                     counter-increment: item;
                     position: absolute;
                     right: 0;
-                    top: 12px;
-                    background: #D4AF37;
+                    top: 4px;
+                    background: #C9A35E;
                     color: white;
-                    width: 28px;
-                    height: 28px;
+                    width: 20px;
+                    height: 20px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: bold;
-                    font-size: 14px;
+                    font-size: 10px;
                 }
                 .note-box {
                     background: #fff3cd;
                     border: 2px solid #ffc107;
-                    border-radius: 8px;
-                    padding: 20px;
-                    margin: 30px 0;
+                    border-radius: 5px;
+                    padding: 8px;
+                    margin: 10px 0;
+                    font-size: 9px;
                 }
                 .note-box strong {
                     color: #856404;
                     display: block;
-                    margin-bottom: 10px;
-                    font-size: 18px;
-                }
-                .note-box p {
-                    color: #856404;
-                    line-height: 1.8;
+                    margin-bottom: 4px;
+                    font-size: 10px;
                 }
                 .footer {
-                    margin-top: 50px;
-                    padding-top: 30px;
-                    border-top: 3px solid #D4AF37;
+                    margin-top: 15px;
+                    padding-top: 10px;
+                    border-top: 2px solid #C9A35E;
                     text-align: center;
                     color: #64748b;
-                    font-size: 13px;
+                    font-size: 8px;
                 }
-                .footer p {
-                    margin: 8px 0;
-                }
+                .footer p { margin: 3px 0; }
                 .certified-seal {
                     display: inline-block;
-                    padding: 10px 20px;
-                    background: #D4AF37;
+                    padding: 5px 10px;
+                    background: #C9A35E;
                     color: white;
-                    border-radius: 50px;
+                    border-radius: 15px;
                     font-weight: bold;
-                    margin: 20px 0;
-                    font-size: 14px;
+                    margin: 8px 0;
+                    font-size: 9px;
                 }
                 @media print {
-                    body {
-                        print-color-adjust: exact;
-                        -webkit-print-color-adjust: exact;
-                    }
+                    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
                 }
             </style>
         </head>
         <body>
             <div class="print-header">
                 <h1>مكتب تأشيرات السعودية في الأردن</h1>
-                <div class="subtitle">Saudia-visa.com | المكتب المعتمد من السفارة السعودية</div>
+                <div class="subtitle">Saudia-visa.com | المكتب المعتمد والمرخص من السفارة السعودية</div>
                 <div class="office-info">
-                    <div>📍 العنوان: الدوار الأول - جبل عمان، عمان، الأردن</div>
-                    <div>📞 الهاتف / واتساب: 0789881009</div>
-                    <div>✉️ البريد الإلكتروني: Visa@saudia-visa.com</div>
-                    <div>🌐 الموقع الإلكتروني: www.saudia-visa.com</div>
+                    <div>📍 الدوار الأول - جبل عمان</div>
+                    <div>📞 0789881009</div>
+                    <div>✉️ Visa@saudia-visa.com</div>
+                    <div>🌐 www.saudia-visa.com</div>
                 </div>
             </div>
             
             <div class="certified-seal">✓ مكتب مرخص ومعتمد رسمياً</div>
             
-            <div class="document-title">
-                الأوراق والمستندات المطلوبة لتأشيرة العمل السعودية
-            </div>
+            <div class="document-title">الأوراق والمستندات المطلوبة لمهنة: ${professionName}</div>
             
             <div class="profession-info">
-                <div style="margin-bottom: 10px;"><strong>المهنة:</strong> ${professionName}</div>
-                <div style="margin-bottom: 10px;"><strong>رمز المهنة:</strong> ${professionCode}</div>
-                <div><strong>تاريخ الطباعة:</strong> ${new Date().toLocaleDateString('ar-SA', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    weekday: 'long'
-                })}</div>
+                <div><strong>المهنة:</strong> ${professionName}</div>
+                <div><strong>رمز المهنة:</strong> ${professionCode}</div>
+                <div><strong>التاريخ:</strong> ${new Date().toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
             </div>
             
             <h2 class="section-title">📋 قائمة الأوراق والمستندات المطلوبة:</h2>
@@ -396,18 +384,13 @@ function printProfessionDocument(professionCode, professionName, requirements) {
             
             <div class="note-box">
                 <strong>⚠️ ملاحظات مهمة:</strong>
-                <p>
-                    • قد تختلف بعض المتطلبات حسب السفارة والحالة الفردية للمتقدم.<br>
-                    • جميع الشهادات والوثائق يجب أن تكون مصدقة من الجهات الرسمية الأردنية أولاً.<br>
-                    • يُنصح بالتواصل مع مكتبنا المعتمد للحصول على استشارة مجانية ومعلومات محدثة.<br>
-                    • نحن نضمن تجهيز ملفك بدقة 100% لضمان القبول من المرة الأولى.
-                </p>
+                <p>• قد تختلف بعض المتطلبات حسب السفارة والحالة الفردية. • جميع الشهادات يجب تصديقها من الجهات الرسمية. • للحصول على استشارة مجانية، تواصل معنا على الرقم 0789881009</p>
             </div>
             
             <div class="footer">
                 <p><strong>مكتب تأشيرات السعودية في الأردن - المكتب المعتمد والمرخص من السفارة السعودية</strong></p>
-                <p>نخدمكم منذ أكثر من 10 سنوات بأعلى معايير الدقة والاحترافية</p>
-                <p style="margin-top: 15px; font-size: 12px;">© ${new Date().getFullYear()} جميع الحقوق محفوظة - Saudia-visa.com</p>
+                <p>نخدمكم بأعلى معايير الدقة والاحترافية منذ أكثر من 10 سنوات</p>
+                <p>© ${new Date().getFullYear()} جميع الحقوق محفوظة - Saudia-visa.com</p>
             </div>
         </body>
         </html>
@@ -417,9 +400,7 @@ function printProfessionDocument(professionCode, professionName, requirements) {
     printWindow.document.close();
     
     printWindow.onload = function() {
-        setTimeout(() => {
-            printWindow.print();
-        }, 250);
+        setTimeout(() => { printWindow.print(); }, 250);
     };
 }
 
