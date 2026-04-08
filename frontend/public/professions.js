@@ -218,30 +218,40 @@ function printProfessionDocument(professionCode, professionName, requirements) {
     const reqCount = actualRequirements.length;
     let itemMargin = '5px';
     let itemPadding = '6px';
-    let fontSize = '10.5px';
-    let lineHeight = '1.6';
+    let itemPaddingRight = '32px';
+    let fontSize = '11px';
+    let lineHeight = '1.65';
+    let titleSize = '14px';
     
     // تعديل المسافات حسب عدد البنود
     if (reqCount <= 7) {
-        itemMargin = '8px';
-        itemPadding = '9px';
+        itemMargin = '9px';
+        itemPadding = '10px';
+        itemPaddingRight = '34px';
+        fontSize = '12.5px';
+        lineHeight = '1.75';
+        titleSize = '15px';
+    } else if (reqCount <= 9) {
+        itemMargin = '7px';
+        itemPadding = '8px';
+        itemPaddingRight = '33px';
         fontSize = '11.5px';
         lineHeight = '1.7';
-    } else if (reqCount <= 9) {
+        titleSize = '14.5px';
+    } else if (reqCount <= 10) {
         itemMargin = '6px';
         itemPadding = '7px';
+        itemPaddingRight = '32px';
         fontSize = '11px';
         lineHeight = '1.65';
-    } else if (reqCount <= 10) {
+        titleSize = '14px';
+    } else {
         itemMargin = '5px';
         itemPadding = '6px';
+        itemPaddingRight = '30px';
         fontSize = '10.5px';
         lineHeight = '1.6';
-    } else {
-        itemMargin = '4px';
-        itemPadding = '5px';
-        fontSize = '10px';
-        lineHeight = '1.55';
+        titleSize = '13.5px';
     }
     
     const printContent = `
@@ -263,7 +273,7 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     padding: 0;
                 }
                 body {
-                    font-family: 'Arial', 'Tahoma', sans-serif;
+                    font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
                     direction: rtl;
                     text-align: right;
                     color: #1B2A41;
@@ -283,13 +293,14 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     flex-shrink: 0;
                 }
                 .print-header h1 {
-                    font-size: 16px;
+                    font-size: 17px;
                     margin-bottom: 5px;
                     font-weight: bold;
+                    letter-spacing: 0.3px;
                 }
                 .print-header .subtitle {
                     color: #C9A35E;
-                    font-size: 10px;
+                    font-size: 10.5px;
                     font-weight: bold;
                     margin-bottom: 6px;
                 }
@@ -297,7 +308,7 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     background: rgba(255,255,255,0.1);
                     padding: 6px;
                     border-radius: 4px;
-                    font-size: 8.5px;
+                    font-size: 9px;
                     display: flex;
                     justify-content: space-around;
                     gap: 8px;
@@ -305,30 +316,31 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                 .document-title {
                     background: #C9A35E;
                     color: white;
-                    padding: 10px;
+                    padding: 12px;
                     margin: 10px 0;
                     border-radius: 5px;
-                    font-size: 13px;
+                    font-size: ${titleSize};
                     font-weight: bold;
                     text-align: center;
                     flex-shrink: 0;
+                    letter-spacing: 0.5px;
                 }
                 .profession-info {
                     background: #f8f9fa;
-                    padding: 8px;
+                    padding: 9px;
                     margin: 8px 0 10px;
                     border-right: 3px solid #C9A35E;
                     border-radius: 4px;
-                    font-size: 10px;
+                    font-size: 10.5px;
                     display: flex;
                     justify-content: space-between;
                     gap: 12px;
                     flex-shrink: 0;
                 }
-                .profession-info strong { color: #1B2A41; }
+                .profession-info strong { color: #1B2A41; font-weight: 600; }
                 .section-title {
                     color: #1B2A41;
-                    font-size: 12px;
+                    font-size: 12.5px;
                     font-weight: bold;
                     margin: 10px 0 8px;
                     padding-bottom: 5px;
@@ -351,13 +363,14 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     justify-content: space-evenly;
                 }
                 .requirements-list li {
-                    padding: ${itemPadding} ${itemPadding} ${itemPadding} 26px;
+                    padding: ${itemPadding} ${itemPadding} ${itemPadding} ${itemPaddingRight};
                     margin: ${itemMargin} 0;
                     border-bottom: 1px solid #e5e7eb;
                     list-style: none;
                     position: relative;
                     font-size: ${fontSize};
                     line-height: ${lineHeight};
+                    font-weight: 500;
                 }
                 .requirements-list li:before {
                     content: counter(item);
@@ -365,30 +378,32 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     position: absolute;
                     right: 0;
                     top: ${itemPadding};
-                    background: #C9A35E;
+                    background: #1B2A41;
                     color: white;
-                    width: 20px;
-                    height: 20px;
+                    width: 22px;
+                    height: 22px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: bold;
-                    font-size: 9px;
+                    font-size: 10px;
+                    box-shadow: 0 2px 4px rgba(27, 42, 65, 0.3);
                 }
                 .note-box {
                     background: #fff9e6;
                     border: 2px solid #C9A35E;
                     border-radius: 5px;
-                    padding: 10px;
+                    padding: 11px;
                     margin: 10px 0;
-                    font-size: 9.5px;
-                    line-height: 1.5;
+                    font-size: 10px;
+                    line-height: 1.6;
                     flex-shrink: 0;
                 }
                 .note-box strong {
                     color: #C9A35E;
-                    font-size: 10.5px;
+                    font-size: 11px;
+                    font-weight: 600;
                 }
                 .footer {
                     margin-top: 10px;
@@ -396,7 +411,7 @@ function printProfessionDocument(professionCode, professionName, requirements) {
                     border-top: 1px solid #C9A35E;
                     text-align: center;
                     color: #64748b;
-                    font-size: 8px;
+                    font-size: 8.5px;
                     flex-shrink: 0;
                 }
                 .footer p { margin: 2px 0; }
