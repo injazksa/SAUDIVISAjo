@@ -33,12 +33,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D4AF37;
+    background: #C9A35E;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #C19A2E;
+    background: #B8924D;
 }
 
 /* Blog Card Styles */

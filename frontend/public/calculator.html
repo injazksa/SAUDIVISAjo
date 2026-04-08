@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>حاسبة رسوم التأشيرات | مكتب تأشيرات السعودية المعتمد في الأردن</title>
+    <meta name="description" content="احسب تكلفة تأشيرة العمل السعودية بدقة. حاسبة ذكية لرسوم التأشيرات الحكومية ورسوم الإنجاز. مكتب معتمد من السفارة السعودية في الأردن.">
+    <meta name="keywords" content="حاسبة رسوم التأشيرات السعودية, تكلفة تأشيرة عمل سعودية, رسوم السفارة السعودية, تكلفة الإنجاز, مكتب تأشيرات معتمد الأردن">
+    <link rel="canonical" href="https://saudia-visa.com/calculator.html">
+    
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1B2A41',
+                        'gold': '#C9A35E',
+                        'gold-light': '#D4AF73',
+                        'navy-dark': '#121C2B',
+                    },
+                    fontFamily: { 'arabic': ['Alexandria', 'Tajawal', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-arabic bg-gray-50">
+    
+    <a href="https://wa.me/962789881009" target="_blank" class="fixed bottom-6 left-6 z-50 w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+    
+    <!-- Header -->
+    <header class="sticky top-0 z-40 backdrop-blur-xl bg-white/80 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <h1 class="text-lg lg:text-xl font-bold text-navy leading-tight">
+                            <span class="block text-gold">مكتب تأشيرات السعودية في الأردن</span>
+                            <span class="block text-sm lg:text-base text-gray-600 font-medium">Saudia-visa.com</span>
+                        </h1>
+                    </a>
+                </div>
+                <nav class="hidden lg:flex items-center space-x-8 space-x-reverse">
+                    <a href="index.html" class="text-navy hover:text-gold transition-colors font-medium">الرئيسية</a>
+                    <a href="index.html#services" class="text-navy hover:text-gold transition-colors font-medium">خدماتنا</a>
+                    <a href="professions.html" class="text-navy hover:text-gold transition-colors font-medium">المهن والأوراق</a>
+                    <a href="calculator.html" class="text-gold font-bold">حاسبة الرسوم</a>
+                    <a href="blog.html" class="text-navy hover:text-gold transition-colors font-medium">المدونة</a>
+                    <a href="index.html#contact" class="bg-gold hover:bg-gold-light text-white px-6 py-2.5 rounded-lg font-semibold transition-all">تواصل معنا</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-br from-navy to-navy-dark text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block px-4 py-2 bg-gold/20 text-gold text-xs font-bold uppercase tracking-wider rounded-full border border-gold/40 mb-6">أداة مجانية وذكية</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">حاسبة رسوم التأشيرات السعودية</h1>
+            <p class="text-xl text-gray-200 max-w-3xl mx-auto">احصل على تقدير دقيق لتكلفة تأشيرتك شاملة الرسوم الحكومية ورسوم الإنجاز</p>
+        </div>
+    </section>
+    
+    <!-- Calculator -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-2xl border-2 border-gold/20 overflow-hidden">
+                <div class="bg-gradient-to-r from-navy to-navy-dark p-8 text-white">
+                    <h2 class="text-3xl font-bold mb-2">احسب التكلفة الكاملة</h2>
+                    <p class="text-gray-300">أدخل المعلومات المطلوبة للحصول على تقدير دقيق</p>
+                </div>
+                
+                <div class="p-8 space-y-6">
+                    <!-- Visa Type -->
+                    <div>
+                        <label class="block text-navy font-bold mb-3">نوع التأشيرة</label>
+                        <select id="visaType" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:ring-4 focus:ring-gold/10 outline-none">
+                            <option value="work">تأشيرة عمل</option>
+                            <option value="visit">تأشيرة زيارة</option>
+                            <option value="family">تأشيرة عائلية</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Profession Category -->
+                    <div>
+                        <label class="block text-navy font-bold mb-3">تصنيف المهنة</label>
+                        <select id="professionCategory" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:ring-4 focus:ring-gold/10 outline-none">
+                            <option value="engineering">هندسية</option>
+                            <option value="medical">طبية</option>
+                            <option value="education">تعليمية</option>
+                            <option value="administrative">إدارية</option>
+                            <option value="technical">فنية</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Services -->
+                    <div>
+                        <label class="block text-navy font-bold mb-3">الخدمات المطلوبة</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:border-gold/50 cursor-pointer transition-all">
+                                <input type="checkbox" id="certification" class="w-5 h-5 text-gold" checked>
+                                <span class="font-medium">تصديق الشهادات</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:border-gold/50 cursor-pointer transition-all">
+                                <input type="checkbox" id="professional" class="w-5 h-5 text-gold" checked>
+                                <span class="font-medium">الاعتماد المهني (إنجاز)</span>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl hover:border-gold/50 cursor-pointer transition-all">
+                                <input type="checkbox" id="medical" class="w-5 h-5 text-gold">
+                                <span class="font-medium">الفحص الطبي</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button onclick="calculateCost()" class="w-full bg-gold hover:bg-gold-light text-white py-4 rounded-xl font-bold text-lg transition-all hover:-translate-y-1 shadow-lg">
+                        <i class="fas fa-calculator ml-2"></i>
+                        احسب التكلفة الآن
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Result -->
+            <div id="result" class="hidden mt-8 bg-gradient-to-br from-navy to-navy-dark text-white rounded-2xl p-8 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6 text-center">التكلفة الإجمالية التقديرية</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white/10 rounded-xl p-6 text-center">
+                        <div class="text-gold text-sm font-bold mb-2">الرسوم الحكومية</div>
+                        <div class="text-3xl font-bold" id="govFees">-</div>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-6 text-center">
+                        <div class="text-gold text-sm font-bold mb-2">رسوم الإنجاز</div>
+                        <div class="text-3xl font-bold" id="serviceFees">-</div>
+                    </div>
+                    <div class="bg-gold/20 border-2 border-gold rounded-xl p-6 text-center">
+                        <div class="text-gold text-sm font-bold mb-2">الإجمالي</div>
+                        <div class="text-4xl font-bold" id="totalFees">-</div>
+                    </div>
+                </div>
+                <p class="text-center text-gray-300 text-sm mb-6">* الأسعار تقديرية وقد تختلف حسب الحالة الفردية</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/962789881009" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold text-center transition-all">
+                        <i class="fab fa-whatsapp ml-2"></i>
+                        تواصل معنا
+                    </a>
+                    <a href="professions.html" class="flex-1 bg-white/20 hover:bg-white/30 text-white py-3 rounded-xl font-bold text-center transition-all">
+                        الأوراق المطلوبة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+    function calculateCost() {
+        const visaType = document.getElementById('visaType').value;
+        const certification = document.getElementById('certification').checked;
+        const professional = document.getElementById('professional').checked;
+        const medical = document.getElementById('medical').checked;
+        
+        let govFees = visaType === 'work' ? 120 : 80;
+        let serviceFees = 50;
+        
+        if (certification) serviceFees += 40;
+        if (professional) serviceFees += 60;
+        if (medical) serviceFees += 30;
+        
+        const total = govFees + serviceFees;
+        
+        document.getElementById('govFees').textContent = govFees + ' دينار';
+        document.getElementById('serviceFees').textContent = serviceFees + ' دينار';
+        document.getElementById('totalFees').textContent = total + ' دينار';
+        document.getElementById('result').classList.remove('hidden');
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
