@@ -206,9 +206,13 @@ function getDefaultRequirements() {
     ];
 }
 
-// Enhanced print function with compact luxurious design
+// Enhanced print function with proper layout
 function printProfessionDocument(professionCode, professionName, requirements) {
     const printWindow = window.open('', '_blank');
+    
+    // فصل الملاحظة عن الأوراق
+    let actualRequirements = requirements.filter(req => !req.includes('ملاحظة هامة'));
+    let note = requirements.find(req => req.includes('ملاحظة هامة'));
     
     const printContent = `
         <!DOCTYPE html>
@@ -219,118 +223,127 @@ function printProfessionDocument(professionCode, professionName, requirements) {
             <style>
                 @page { 
                     size: A4; 
-                    margin: 15mm 12mm;
+                    margin: 18mm 15mm;
                 }
                 * { margin: 0; padding: 0; box-sizing: border-box; }
                 body {
                     font-family: 'Arial', 'Tahoma', sans-serif;
                     direction: rtl;
                     text-align: right;
-                    line-height: 1.5;
+                    line-height: 1.6;
                     color: #1B2A41;
                     background: white;
-                    font-size: 10.5px;
-                    min-height: 100vh;
-                    display: flex;
-                    flex-direction: column;
+                    font-size: 11px;
                 }
                 .print-header {
                     background: linear-gradient(135deg, #1B2A41 0%, #2a3f5f 100%);
                     color: white;
-                    padding: 10px 15px;
+                    padding: 12px 18px;
                     text-align: center;
-                    border-radius: 4px;
-                    margin-bottom: 12px;
+                    border-radius: 5px;
+                    margin-bottom: 15px;
                 }
                 .print-header h1 {
-                    font-size: 15px;
-                    margin-bottom: 4px;
+                    font-size: 16px;
+                    margin-bottom: 5px;
                     font-weight: bold;
                 }
                 .print-header .subtitle {
                     color: #C9A35E;
-                    font-size: 9.5px;
+                    font-size: 10px;
                     font-weight: bold;
-                    margin-bottom: 5px;
+                    margin-bottom: 6px;
                 }
                 .office-info {
                     background: rgba(255,255,255,0.1);
-                    padding: 5px;
-                    border-radius: 3px;
-                    font-size: 8px;
+                    padding: 6px;
+                    border-radius: 4px;
+                    font-size: 8.5px;
                     display: flex;
                     justify-content: space-around;
-                    gap: 6px;
+                    gap: 8px;
                 }
                 .document-title {
                     background: #C9A35E;
                     color: white;
-                    padding: 8px;
-                    margin: 8px 0;
-                    border-radius: 4px;
-                    font-size: 12.5px;
+                    padding: 10px;
+                    margin: 10px 0;
+                    border-radius: 5px;
+                    font-size: 13px;
                     font-weight: bold;
                     text-align: center;
                 }
                 .profession-info {
                     background: #f8f9fa;
-                    padding: 6px;
-                    margin: 6px 0;
+                    padding: 8px;
+                    margin: 8px 0;
                     border-right: 3px solid #C9A35E;
-                    border-radius: 3px;
-                    font-size: 9px;
+                    border-radius: 4px;
+                    font-size: 10px;
                     display: flex;
                     justify-content: space-between;
-                    gap: 10px;
+                    gap: 12px;
                 }
                 .profession-info strong { color: #1B2A41; }
                 .section-title {
                     color: #1B2A41;
-                    font-size: 11.5px;
+                    font-size: 12px;
                     font-weight: bold;
-                    margin: 10px 0 6px;
-                    padding-bottom: 4px;
+                    margin: 12px 0 8px;
+                    padding-bottom: 5px;
                     border-bottom: 2px solid #C9A35E;
                 }
                 .requirements-list {
-                    margin: 6px 0;
+                    margin: 8px 0;
                     padding: 0;
                     counter-reset: item;
-                    flex: 1;
                 }
                 .requirements-list li {
-                    padding: 5px 5px 5px 24px;
-                    margin: 4px 0;
+                    padding: 6px 6px 6px 26px;
+                    margin: 5px 0;
                     border-bottom: 1px solid #e5e7eb;
                     list-style: none;
                     position: relative;
-                    font-size: 10px;
-                    line-height: 1.5;
+                    font-size: 10.5px;
+                    line-height: 1.6;
                 }
                 .requirements-list li:before {
                     content: counter(item);
                     counter-increment: item;
                     position: absolute;
                     right: 0;
-                    top: 4px;
+                    top: 5px;
                     background: #C9A35E;
                     color: white;
-                    width: 18px;
-                    height: 18px;
+                    width: 20px;
+                    height: 20px;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: bold;
-                    font-size: 8px;
+                    font-size: 9px;
+                }
+                .note-box {
+                    background: #fff9e6;
+                    border: 2px solid #C9A35E;
+                    border-radius: 5px;
+                    padding: 10px;
+                    margin: 12px 0;
+                    font-size: 9.5px;
+                    line-height: 1.5;
+                }
+                .note-box strong {
+                    color: #C9A35E;
+                    font-size: 10.5px;
                 }
                 .footer {
-                    margin-top: auto;
+                    margin-top: 15px;
                     padding-top: 8px;
                     border-top: 1px solid #C9A35E;
                     text-align: center;
                     color: #64748b;
-                    font-size: 7.5px;
+                    font-size: 8px;
                 }
                 .footer p { margin: 2px 0; }
                 @media print {
@@ -359,8 +372,15 @@ function printProfessionDocument(professionCode, professionName, requirements) {
             
             <h2 class="section-title">📋 قائمة الأوراق والمستندات المطلوبة:</h2>
             <ul class="requirements-list">
-                ${requirements.map(req => `<li>${req}</li>`).join('')}
+                ${actualRequirements.map(req => `<li>${req}</li>`).join('')}
             </ul>
+            
+            ${note ? `
+            <div class="note-box">
+                <strong>⚠️ ملاحظة هامة:</strong><br>
+                ${note.replace('ملاحظة هامة جداً (التصديقات الخارجية): ', '')}
+            </div>
+            ` : ''}
             
             <div class="footer">
                 <p><strong>مكتب تأشيرات السعودية في الأردن</strong> | نخدمكم بأعلى معايير الدقة والاحترافية</p>
