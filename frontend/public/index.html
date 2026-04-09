@@ -163,13 +163,27 @@
 </head>
 <body class="font-arabic bg-gray-50 text-slate-900">
     
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/962789881009" 
-       target="_blank"
-       data-testid="whatsapp-float-btn"
-       class="fixed bottom-6 left-6 z-50 w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 hover:-translate-y-1">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
+    <!-- Floating Action Buttons - WhatsApp & Call -->
+    <div class="fixed bottom-6 left-6 z-50 flex flex-col gap-3" style="direction: ltr;">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/962789881009?text=مرحباً، أحتاج مساعدة في استخراج تأشيرة عمل سعودية"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-testid="floating-whatsapp"
+           title="تواصل معنا عبر واتساب"
+           class="group w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 hover:-translate-y-1 relative">
+            <i class="fab fa-whatsapp text-2xl relative z-10"></i>
+            <span class="absolute inset-0 rounded-full bg-green-400 opacity-75 animate-ping"></span>
+        </a>
+        
+        <!-- Call Button -->
+        <a href="tel:+962789881009"
+           data-testid="floating-call"
+           title="اتصل بنا مباشرة"
+           class="group w-14 h-14 bg-gold hover:bg-yellow-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 hover:-translate-y-1">
+            <i class="fas fa-phone-alt text-xl relative z-10"></i>
+        </a>
+    </div>
     
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-40 backdrop-blur-xl bg-white/80 border-b border-gray-100 shadow-sm">
@@ -1086,14 +1100,15 @@
                             <i class="fas fa-phone-alt text-gold mt-1"></i>
                             <div>
                                 <div class="text-sm text-gray-500 mb-1">الهاتف / واتساب</div>
-                                <a href="tel:0789881009" class="hover:text-gold transition-colors">0789881009</a>
+                                <a href="tel:+962789881009" class="hover:text-gold transition-colors" dir="ltr">+962 78 988 1009</a>
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="far fa-envelope text-gold mt-1"></i>
                             <div>
                                 <div class="text-sm text-gray-500 mb-1">البريد الإلكتروني</div>
-                                <a href="mailto:Visa@saudia-visa.com" class="hover:text-gold transition-colors">Visa@saudia-visa.com</a>
+                                <a href="mailto:Info@saudia-visa.com" class="hover:text-gold transition-colors block">Info@saudia-visa.com</a>
+                                <a href="mailto:Visa@saudia-visa.com" class="hover:text-gold transition-colors block text-sm">Visa@saudia-visa.com</a>
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
@@ -1109,6 +1124,23 @@
             
             <!-- Bottom Footer -->
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-gray-400 text-sm text-center md:text-right">
+                    © 2025 مكتب تأشيرات السعودية في الأردن - جميع الحقوق محفوظة
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="privacy.html" class="text-gray-400 hover:text-gold transition-colors">سياسة الخصوصية</a>
+                    <a href="terms.html" class="text-gray-400 hover:text-gold transition-colors">الشروط والأحكام</a>
+                    <a href="disclaimer.html" class="text-gray-400 hover:text-gold transition-colors">إخلاء المسؤولية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    </div><!-- End React Root -->
+</body>
+</html>
+border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="text-gray-400 text-sm text-center md:text-right">
                     © 2025 مكتب تأشيرات السعودية في الأردن - جميع الحقوق محفوظة
                 </div>
