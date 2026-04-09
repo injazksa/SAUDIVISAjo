@@ -2,132 +2,42 @@ backend:
   name: git-gateway
   branch: main
 
-# المسارات الصحيحة للصور
-media_folder: "images"
-public_folder: "/images"
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
 
-# إزالة مكتبة الوسائط الخارجية لضمان استخدام الرفع المباشر للمستودع
-media_library:
-  name: ""
-
-# تفعيل المعاينة بشكل كامل
-editor:
-  preview: true
+locale: ar
 
 collections:
-  - name: "settings"
-    label: "⚙️ إعدادات الموقع العامة"
-    delete: false
-    editor:
-      preview: true
-    files:
-      - name: "general"
-        label: "المعلومات الأساسية والروابط"
-        file: "settings.json"
-        fields:
-          - {label: "اسم المكتب", name: "site_name", widget: "string"}
-          - {label: "شعار الموقع (Logo)", name: "logo", widget: "image", default: "assets/logo.png"}
-          - {label: "رقم الهاتف", name: "phone", widget: "string"}
-          - {label: "رقم الواتساب (بدون +)", name: "whatsapp", widget: "string"}
-          - {label: "البريد الإلكتروني", name: "email", widget: "string"}
-          - {label: "رابط فيسبوك", name: "facebook", widget: "string", required: false}
-          - {label: "صورة الواجهة الرئيسية (Hero)", name: "hero_bg", widget: "image", default: "images/hero-bg.jpg"}
-          - {label: "العنوان الجغرافي", name: "address", widget: "string"}
-          - {label: "وصف الموقع لـ Google (SEO)", name: "meta_description", widget: "text"}
-
-          - label: "شريط الأخبار (News Ticker)"
-            name: "news_ticker"
-            widget: "list"
-            summary: "{{fields.text}}"
-            fields:
-              - {label: "نص الخبر", name: "text", widget: "string"}
-
-  - name: "professions_file"
-    label: "💼 إدارة المهن (قائمة واحدة)"
-    files:
-      - name: "all_professions"
-        label: "كل المهن"
-        file: "professions.json"
-        fields:
-          - label: "قائمة المهن"
-            name: "professions"
-            widget: "list"
-            fields:
-              - {label: "كود المهنة", name: "code", widget: "string"}
-              - {label: "اسم المهنة", name: "title", widget: "string"}
-              - label: "تصنيف القسم"
-                name: "category"
-                widget: "select"
-                options: 
-                  - {label: "هندسية", value: "هندسية"}
-                  - {label: "طبية", value: "طبية"}
-                  - {label: "مالية وإدارية", value: "مالية وإدارية"}
-                  - {label: "تقنية معلومات", value: "تقنية معلومات"}
-                  - {label: "فنية وحرفية", value: "فنية وحرفية"}
-                  - {label: "عمالة وسائقين", value: "عمالة وسائقين"}
-                  - {label: "استقدام", value: "استقدام"}
-
   - name: "blog"
-    label: "✍️ المدونة (المقالات)"
-    folder: "blog"
+    label: "مقالات المدونة"
+    label_singular: "مقال"
+    folder: "public/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
-    editor:
-      preview: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
     fields:
-      - {label: "العنوان", name: "title", widget: "string"}
-      - {label: "رابط انجليزي فريد", name: "slug", widget: "string"}
-      - {label: "تاريخ النشر", name: "date", widget: "datetime"}
-      - {label: "صورة المقال", name: "image", widget: "image"}
-      - {label: "وصف مختصر", name: "description", widget: "text"}
-      - {label: "محتوى المقال", name: "body", widget: "markdown"}
+      - {label: "العنوان", name: "title", widget: "string", required: true}
+      - {label: "المعرّف (ID)", name: "id", widget: "string", required: true, hint: "معرّف فريد بالإنجليزية بدون مسافات، مثال: work-visa-guide-2025"}
+      - {label: "التصنيف", name: "category", widget: "select", options: ["تأشيرات", "تصديقات", "إنجاز", "نصائح", "أخبار"], required: true}
+      - {label: "التاريخ", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "وقت القراءة (بالدقائق)", name: "readingTime", widget: "number", default: 10, required: true}
+      - {label: "المقدمة (Excerpt)", name: "excerpt", widget: "text", required: true, hint: "ملخص قصير للمقال (2-3 أسطر)"}
+      - {label: "صورة بارزة (اختياري)", name: "featuredImage", widget: "image", required: false}
+      - {label: "المحتوى", name: "body", widget: "markdown", required: true}
+      - {label: "الكلمات المفتاحية (SEO)", name: "keywords", widget: "list", required: false}
+      - {label: "وصف ميتا (SEO)", name: "metaDescription", widget: "text", required: false}
+      - {label: "منشور؟", name: "published", widget: "boolean", default: true}
 
   - name: "pages"
-    label: "📄 إدارة محتوى الصفحات"
-    editor:
-      preview: true
+    label: "الصفحات"
+    label_singular: "صفحة"
     files:
-      - file: "index.html"
-        label: "الصفحة الرئيسية"
-        name: "index"
-        fields:
-          - label: "قسم الواجهة (Hero)"
-            name: "hero"
-            widget: "object"
-            fields:
-              - {label: "العنوان الرئيسي", name: "title", widget: "string"}
-              - {label: "الوصف الفرعي", name: "subtitle", widget: "string"}
-              - {label: "نص الزر", name: "btn_text", widget: "string"}
-          
-          - label: "قسم الخدمات"
-            name: "services_section"
-            widget: "object"
-            fields:
-              - {label: "عنوان القسم", name: "title", widget: "string"}
-              - {label: "وصف القسم", name: "desc", widget: "text"}
-              - label: "البطاقات التعريفية للخدمات"
-                name: "cards"
-                widget: "list"
-                fields:
-                  - {label: "اسم الخدمة", name: "name", widget: "string"}
-                  - {label: "وصف مختصر", name: "short_desc", widget: "text"}
-                  - {label: "الأيقونة", name: "icon", widget: "string"}
-                  - {label: "رابط الصفحة", name: "link", widget: "string"}
-
-  - name: "legal"
-    label: "⚖️ الصفحات القانونية"
-    editor:
-      preview: true
-    files:
-      - file: "privacy.html"
-        label: "سياسة الخصوصية"
-        name: "privacy"
+      - label: "الصفحة الرئيسية"
+        name: "home"
+        file: "content/home.md"
         fields:
           - {label: "العنوان", name: "title", widget: "string"}
-          - {label: "المحتوى", name: "body", widget: "markdown"}
-      - file: "terms.html"
-        label: "شروط الاستخدام"
-        name: "terms"
-        fields:
-          - {label: "العنوان", name: "title", widget: "string"}
-          - {label: "المحتوى", name: "body", widget: "markdown"}
+          - {label: "العنوان الفرعي", name: "subtitle", widget: "text"}
+          - {label: "نص زر الإجراء الرئيسي", name: "ctaText", widget: "string"}
+          - {label: "رابط زر الإجراء", name: "ctaLink", widget: "string"}
