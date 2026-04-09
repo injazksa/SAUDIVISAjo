@@ -43,9 +43,9 @@
     <meta name="twitter:description" content="المكتب المعتمد للسفارة السعودية | تأشيرات، تصديقات، إنجاز | +962 78 988 1009">
     <meta name="twitter:image" content="https://saudia-visa.com/images/1000136638.webp">
     
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <!-- Favicons - Updated -->
+    <link rel="icon" type="image/png" href="https://static.prod-images.emergentagent.com/jobs/9edf86e0-bd9d-4007-a13e-6e0731d6fd46/images/2ca7aae24578d5404b515f368ef4c79f32469bfbf1e24c5b9888c58a1e2f6805.png">
+    <link rel="apple-touch-icon" href="https://static.prod-images.emergentagent.com/jobs/9edf86e0-bd9d-4007-a13e-6e0731d6fd46/images/2ca7aae24578d5404b515f368ef4c79f32469bfbf1e24c5b9888c58a1e2f6805.png">
     
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,6 +75,13 @@
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://static.prod-images.emergentagent.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    
     <style>
     /* Critical Overflow Fix for RTL Layout */
     html, body {
@@ -85,6 +92,21 @@
     .news-ticker, .hero-slider, #home {
         max-width: 100vw !important;
         overflow-x: hidden !important;
+    }
+    
+    /* Critical CSS for instant load */
+    body {
+        font-family: 'Alexandria', 'Tajawal', sans-serif;
+        background-color: #f9fafb;
+    }
+    
+    /* Prevent flash of unstyled content */
+    .hero-slide {
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .hero-slide.active {
+        opacity: 1;
     }
     </style>
     
@@ -1075,16 +1097,6 @@
                 <div class="flex gap-6 text-sm">
                     <a href="privacy.html" class="text-gray-400 hover:text-gold transition-colors">سياسة الخصوصية</a>
                     <a href="terms.html" class="text-gray-400 hover:text-gold transition-colors">الشروط والأحكام</a>
-                    <a href="disclaimer.html" class="text-gray-400 hover:text-gold transition-colors">إخلاء المسؤولية</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="script.js"></script>
-</body>
-</html>
-وط والأحكام</a>
                     <a href="disclaimer.html" class="text-gray-400 hover:text-gold transition-colors">إخلاء المسؤولية</a>
                 </div>
             </div>
