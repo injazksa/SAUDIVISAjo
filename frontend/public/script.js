@@ -581,7 +581,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ======================
-// PARALLAX EFFECT ON HERO
+// PARALLAX EFFECT ON HERO - Fixed for RTL
 // ======================
 (function() {
     const heroSection = document.querySelector('#home');
@@ -589,11 +589,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (heroSection) {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.5;
+            const parallaxSpeed = 0.3;
             
             const slides = heroSection.querySelectorAll('.hero-slide img');
             slides.forEach(slide => {
-                slide.style.transform = `translateY(${scrolled * parallaxSpeed}px) scale(1.1)`;
+                // Only use translateY to avoid horizontal overflow
+                slide.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
             });
         });
     }
