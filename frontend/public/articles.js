@@ -912,35 +912,203 @@ const articles = {
 
     <h2 class="text-3xl font-bold text-navy mb-6 mt-12">التكلفة والمدة</h2>
     
+    <div class="bg-blue-50 border-r-4 border-blue-500 p-6 rounded-lg mb-8">
+        <h3 class="text-xl font-bold text-navy mb-3">
+            <i class="fas fa-info-circle text-blue-600 ml-2"></i>
+            ملاحظة مهمة
+        </h3>
+        <p class="text-gray-700">
+            التكاليف أدناه شاملة جميع الإجراءات (الخارجية الأردنية + السفارة السعودية + خدمة المكتب).
+        </p>
+    </div>
+
+    <h3 class="text-2xl font-bold text-navy mb-6">أولاً: رسوم وزارة الخارجية الأردنية</h3>
+    
+    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 mb-8">
+        <table class="w-full text-right">
+            <thead>
+                <tr class="border-b-2 border-green-500">
+                    <th class="py-3 text-navy font-bold">نوع الوثيقة</th>
+                    <th class="py-3 text-navy font-bold">للأردني</th>
+                    <th class="py-3 text-navy font-bold">لغير الأردني</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                <tr class="border-b border-gray-200">
+                    <td class="py-3">الشهادات والوثائق العادية</td>
+                    <td class="py-3 font-semibold">2 دينار/ورقة</td>
+                    <td class="py-3 font-semibold">5 دنانير/ورقة</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="py-3">السجلات التجارية</td>
+                    <td class="py-3 font-semibold" colspan="2">21 دينار</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-navy mb-6">ثانياً: رسوم التصديق الكاملة (شاملة كل شيء)</h3>
+    
+    <div class="space-y-6 mb-8">
+        <!-- الشهادات الجامعية -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-blue-600">
+            <div class="flex items-center gap-4 mb-6">
+                <i class="fas fa-graduation-cap text-blue-600 text-4xl"></i>
+                <div>
+                    <h4 class="text-2xl font-bold text-navy">الشهادات الجامعية</h4>
+                    <p class="text-blue-600 text-sm">بكالوريوس، ماجستير، دكتوراه</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-file text-blue-600 text-2xl"></i>
+                        <h5 class="font-bold text-navy">نسخة واحدة</h5>
+                    </div>
+                    <p class="text-3xl font-bold text-navy mb-2">170 دينار</p>
+                    <p class="text-sm text-gray-600">تقريباً</p>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-copy text-blue-600 text-2xl"></i>
+                        <h5 class="font-bold text-navy">نسخة إضافية</h5>
+                    </div>
+                    <p class="text-3xl font-bold text-navy mb-2">+25 دينار</p>
+                    <p class="text-sm text-gray-600">لكل نسخة</p>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-r-4 border-yellow-500 p-4 rounded-lg mb-4">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-clock text-yellow-600 ml-1"></i>
+                    <strong>المدة:</strong> تقريباً 15 يوم عمل (يتم التقديم أولاً على موقع مصادقة، ثم التصديق من السفارة السعودية)
+                </p>
+            </div>
+
+            <div class="bg-green-50 p-4 rounded-lg">
+                <h5 class="font-bold text-navy mb-2">متى تحتاج تصديق الشهادات الجامعية؟</h5>
+                <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-600"></i>
+                        <span>للحصول على وظيفة جديدة في السعودية</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-600"></i>
+                        <span>للاستقدام العائلي (إضافة أفراد الأسرة)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-blue-100 border-r-2 border-blue-400 p-4 rounded-lg mt-4">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-info-circle text-blue-600 ml-1"></i>
+                    <strong>ملاحظة:</strong> تصديق كشف العلامات <strong class="text-blue-700">اختياري</strong> (ليس إلزامي في معظم الحالات)
+                </p>
+            </div>
+        </div>
+
+        <!-- باقي الشهادات والوثائق -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-green-600">
+            <div class="flex items-center gap-4 mb-6">
+                <i class="fas fa-file-alt text-green-600 text-4xl"></i>
+                <div>
+                    <h4 class="text-2xl font-bold text-navy">باقي الشهادات والوثائق الرسمية</h4>
+                    <p class="text-green-600 text-sm">أحوال مدنية، خبرة، وكالات، شهادة عدم محكومية، إلخ</p>
+                </div>
+            </div>
+            
+            <div class="bg-green-50 p-6 rounded-lg mb-4">
+                <p class="text-3xl font-bold text-navy mb-2">25 دينار</p>
+                <p class="text-gray-600">تقريباً للوثيقة الواحدة (شامل كل الإجراءات)</p>
+            </div>
+
+            <div class="bg-yellow-50 border-r-4 border-yellow-500 p-4 rounded-lg">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-clock text-yellow-600 ml-1"></i>
+                    <strong>المدة:</strong> من 1 إلى 4 أيام عمل
+                </p>
+            </div>
+        </div>
+
+        <!-- السجلات التجارية -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-purple-600">
+            <div class="flex items-center gap-4 mb-6">
+                <i class="fas fa-building text-purple-600 text-4xl"></i>
+                <div>
+                    <h4 class="text-2xl font-bold text-navy">السجلات التجارية</h4>
+                    <p class="text-purple-600 text-sm">للشركات والمستثمرين</p>
+                </div>
+            </div>
+            
+            <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                <h5 class="font-bold text-navy mb-4">الوثائق المطلوبة للسجل التجاري:</h5>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span><strong>السجل التجاري</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span><strong>عقد التأسيس</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span><strong>الميزانية</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span><strong>الوكالة</strong></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-purple-50 p-6 rounded-lg mb-4">
+                <p class="text-3xl font-bold text-navy mb-2">60 دينار</p>
+                <p class="text-gray-600">تقريباً لكل نسخة (شاملة)</p>
+            </div>
+
+            <div class="bg-yellow-50 border-r-4 border-yellow-500 p-4 rounded-lg">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-clock text-yellow-600 ml-1"></i>
+                    <strong>المدة:</strong> من 1 إلى 4 أيام عمل
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-2xl font-bold text-navy mb-6">ملخص التكلفة والمدة</h3>
+    
     <div class="bg-gradient-to-br from-gold/10 to-gold/5 rounded-xl p-8 mb-8">
         <table class="w-full text-right">
             <thead>
                 <tr class="border-b-2 border-gold">
-                    <th class="py-3 text-navy font-bold">الإجراء</th>
+                    <th class="py-3 text-navy font-bold">نوع الوثيقة</th>
                     <th class="py-3 text-navy font-bold">التكلفة</th>
                     <th class="py-3 text-navy font-bold">المدة</th>
                 </tr>
             </thead>
             <tbody class="text-gray-700">
                 <tr class="border-b border-gray-200">
-                    <td class="py-3">تصديق من الخارجية الأردنية</td>
-                    <td class="py-3 font-semibold">10-15 دينار/وثيقة</td>
-                    <td class="py-3">1-3 أيام</td>
+                    <td class="py-3">شهادة جامعية (نسخة واحدة)</td>
+                    <td class="py-3 font-semibold">~170 دينار</td>
+                    <td class="py-3">~15 يوم</td>
                 </tr>
                 <tr class="border-b border-gray-200">
-                    <td class="py-3">تصديق من السفارة السعودية</td>
-                    <td class="py-3 font-semibold">15-25 دينار/وثيقة</td>
-                    <td class="py-3">2-5 أيام</td>
+                    <td class="py-3">شهادة جامعية (نسخة إضافية)</td>
+                    <td class="py-3 font-semibold">+25 دينار</td>
+                    <td class="py-3">-</td>
                 </tr>
                 <tr class="border-b border-gray-200">
-                    <td class="py-3">الترجمة (إن لزم)</td>
-                    <td class="py-3 font-semibold">5-15 دينار/صفحة</td>
-                    <td class="py-3">1-2 يوم</td>
+                    <td class="py-3">باقي الشهادات والوثائق</td>
+                    <td class="py-3 font-semibold">~25 دينار</td>
+                    <td class="py-3">1-4 أيام</td>
                 </tr>
-                <tr class="border-b-2 border-gold font-bold text-navy">
-                    <td class="py-3">التكلفة الإجمالية</td>
-                    <td class="py-3">25-40 دينار/وثيقة</td>
-                    <td class="py-3">3-8 أيام</td>
+                <tr class="border-b border-gray-200">
+                    <td class="py-3">سجل تجاري (كل نسخة)</td>
+                    <td class="py-3 font-semibold">~60 دينار</td>
+                    <td class="py-3">1-4 أيام</td>
                 </tr>
             </tbody>
         </table>
@@ -949,27 +1117,31 @@ const articles = {
     <div class="bg-yellow-50 border-r-4 border-yellow-500 p-6 rounded-lg mb-8">
         <h3 class="text-xl font-bold text-navy mb-3">
             <i class="fas fa-bolt text-yellow-600 ml-2"></i>
-            خدمتنا السريعة
+            خدمتنا السريعة والشاملة
         </h3>
-        <p class="text-gray-700 mb-3">
-            نحن نقدم خدمة تصديق شاملة توفر عليك:
+        <p class="text-gray-700 mb-4">
+            نحن نقدم خدمة تصديق كاملة توفر عليك:
         </p>
-        <ul class="space-y-2 text-gray-700">
+        <ul class="space-y-3 text-gray-700 mb-4">
             <li class="flex items-center gap-2">
                 <i class="fas fa-check text-yellow-600"></i>
-                <span>الوقت: ننجز التصديق الكامل في <strong>3-5 أيام عمل</strong></span>
+                <span><strong>السرعة:</strong> الشهادات العادية في <strong>1-4 أيام</strong>، الجامعية في <strong>15 يوم</strong></span>
             </li>
             <li class="flex items-center gap-2">
                 <i class="fas fa-check text-yellow-600"></i>
-                <span>الجهد: نحن نذهب للخارجية والسفارة نيابة عنك</span>
+                <span><strong>الراحة:</strong> نحن نذهب للخارجية والسفارة نيابة عنك</span>
             </li>
             <li class="flex items-center gap-2">
                 <i class="fas fa-check text-yellow-600"></i>
-                <span>الدقة: نضمن صحة جميع الإجراءات 100%</span>
+                <span><strong>الدقة:</strong> نضمن صحة جميع الإجراءات 100%</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-yellow-600"></i>
+                <span><strong>الشمولية:</strong> نتابع معك من البداية حتى استلام الوثائق مصدقة</span>
             </li>
         </ul>
-        <a href="certificates.html" class="inline-block mt-4 text-yellow-700 font-bold hover:underline">
-            تعرف على خدماتنا <i class="fas fa-arrow-left mr-1"></i>
+        <a href="certificates.html" class="inline-block mt-2 text-yellow-700 font-bold hover:underline">
+            تعرف على جميع خدماتنا <i class="fas fa-arrow-left mr-1"></i>
         </a>
     </div>
 
