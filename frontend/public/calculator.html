@@ -212,20 +212,24 @@
             experienceSection.classList.add('hidden');
         }
         
-        // Disable certification and professional for certain categories
-        const disableOptions = ['domestic', 'ceo', 'worker'];
-        const shouldDisable = disableOptions.includes(profession);
-        
-        document.getElementById('certification').disabled = shouldDisable;
-        document.getElementById('professional').disabled = shouldDisable;
-        
-        if (shouldDisable) {
+        // Disable certification for all except engineer
+        if (profession === 'engineer') {
+            document.getElementById('certification').disabled = false;
+            certLabel.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+            document.getElementById('certification').disabled = true;
             document.getElementById('certification').checked = false;
-            document.getElementById('professional').checked = false;
             certLabel.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+        
+        // Disable professional for domestic, ceo, worker
+        const disableProfessional = ['domestic', 'ceo', 'worker'];
+        if (disableProfessional.includes(profession)) {
+            document.getElementById('professional').disabled = true;
+            document.getElementById('professional').checked = false;
             profLabel.classList.add('opacity-50', 'cursor-not-allowed');
         } else {
-            certLabel.classList.remove('opacity-50', 'cursor-not-allowed');
+            document.getElementById('professional').disabled = false;
             profLabel.classList.remove('opacity-50', 'cursor-not-allowed');
         }
     }
@@ -261,22 +265,23 @@
         let minCost = 0;
         let maxCost = 0;
         let breakdown = [];
+        let needsMedical = true; // افتراضي: يحتاج فحص طبي
         
         // Calculate based on visa type
-        if (visaType === 'work' || visaType === 'residence') {
+        if (visaType === 'work') {
             if (!profession) {
                 alert('الرجاء اختيار تصنيف المهنة');
                 return;
             }
             
+            needsMedical = true;
+            
             // Base visa cost based on profession
             if (profession === 'domestic') {
                 // عمالة منزلية
-                if (visaOnly || (!certification && !professional)) {
-                    minCost = 150;
-                    maxCost = 180;
-                    breakdown.push('رسوم التأشيرة: 150-180 دينار');
-                }
+                minCost = 150;
+                maxCost = 180;
+                breakdown.push('رسوم التأشيرة (عمالة منزلية): 150-180 دينار');
             } else if (profession === 'ceo') {
                 // رئيس تنفيذي / مدير عام
                 minCost = 400;
@@ -288,51 +293,38 @@
                 maxCost = 200;
                 breakdown.push('رسوم التأشيرة (عمال): 150-200 دينار');
             } else if (profession === 'engineer') {
-                // مهندس
+                // مهندسين
                 minCost = 220;
                 maxCost = 280;
                 breakdown.push('رسوم التأشيرة الأساسية: 220-280 دينار');
                 
                 if (certification) {
-                    // تصديق الشهادات للمهندس
-                    minCost += 100;
-                    maxCost += 150;
-                    breakdown.push('+ تصديق الشهادات الهندسية: 100-150 دينار');
+                    minCost += 160;
+                    maxCost += 190;
+                    breakdown.push('+ تصديق الشهادات الهندسية: 160-190 دينار');
                 }
                 
                 if (professional) {
-                    // اعتماد مهني للمهندس
                     minCost += 160;
                     maxCost += 200;
                     breakdown.push('+ الاعتماد المهني: 160-200 دينار');
                 }
             } else if (profession === 'professional') {
-                // مهن أخرى
-                if (visaOnly || (!certification && !professional)) {
-                    minCost = 220;
-                    maxCost = 280;
-                    breakdown.push('رسوم التأشيرة: 220-280 دينار');
-                } else {
-                    minCost = 220;
-                    maxCost = 280;
-                    breakdown.push('رسوم التأشيرة الأساسية: 220-280 دينار');
-                    
-                    if (certification) {
-                        minCost += 60;
-                        maxCost += 100;
-                        breakdown.push('+ تصديق الشهادات: 60-100 دينار');
-                    }
-                    
-                    if (professional) {
-                        if (experience === 'two-plus') {
-                            minCost += 160;
-                            maxCost += 160;
-                            breakdown.push('+ الاعتماد المهني (خبرة +2 سنوات): 160 دينار');
-                        } else if (experience === 'one') {
-                            minCost += 80;
-                            maxCost += 80;
-                            breakdown.push('+ الاعتماد المهني (خبرة سنة): 80 دينار');
-                        }
+                // مهن مهنية
+                minCost = 220;
+                maxCost = 280;
+                breakdown.push('رسوم التأشيرة الأساسية: 220-280 دينار');
+                
+                // لا تصديق شهادات - فقط اعتماد مهني
+                if (professional) {
+                    if (experience === 'two-plus') {
+                        minCost += 160;
+                        maxCost += 160;
+                        breakdown.push('+ الاعتماد المهني (خبرة +2 سنوات): 160 دينار');
+                    } else if (experience === 'one') {
+                        minCost += 80;
+                        maxCost += 80;
+                        breakdown.push('+ الاعتماد المهني (خبرة سنة): 80 دينار');
                     }
                 }
             }
@@ -344,11 +336,54 @@
                 breakdown.push('+ الفحص الطبي: 132 دينار');
             }
             
-        } else {
-            // For other visa types
-            minCost = 100;
-            maxCost = 200;
-            breakdown.push(`رسوم ${getVisaTypeName(visaType)}: 100-200 دينار (تقريباً)`);
+        } else if (visaType === 'residence') {
+            // الإقامة (الاستقدام)
+            needsMedical = true;
+            minCost = 70;
+            maxCost = 90;
+            breakdown.push('رسوم التأشيرة (مكتب تأشير): 70-90 دينار');
+            breakdown.push('+ حجز موعد: 15 دينار (تواصل معنا)');
+            
+            if (medical) {
+                minCost += 132;
+                maxCost += 132;
+                breakdown.push('+ الفحص الطبي: 132 دينار');
+            }
+            
+        } else if (visaType === 'visit') {
+            // زيارة
+            needsMedical = false;
+            minCost = 120;
+            maxCost = 140;
+            breakdown.push('رسوم التأشيرة (مكتب تأشير): 120-140 دينار');
+            
+        } else if (visaType === 'family') {
+            // زيارة عائلية
+            needsMedical = false;
+            minCost = 120;
+            maxCost = 140;
+            breakdown.push('رسوم التأشيرة (مكتب تأشير): 120-140 دينار');
+            
+        } else if (visaType === 'personal') {
+            // شخصية
+            needsMedical = false;
+            minCost = 120;
+            maxCost = 140;
+            breakdown.push('رسوم التأشيرة (مكتب تأشير): 120-140 دينار');
+            
+        } else if (visaType === 'business') {
+            // أعمال
+            needsMedical = false;
+            minCost = 120;
+            maxCost = 140;
+            breakdown.push('رسوم التأشيرة (مكتب تأشير): 120-140 دينار');
+            
+        } else if (visaType === 'government') {
+            // حكومية
+            needsMedical = false;
+            minCost = 50;
+            maxCost = 90;
+            breakdown.push('رسوم التأشيرة (مكتب تأشير): 50-90 دينار');
         }
         
         // Display result
@@ -364,6 +399,11 @@
         // Display breakdown
         const breakdownDiv = document.getElementById('breakdown');
         breakdownDiv.innerHTML = breakdown.map(item => `<div>• ${item}</div>`).join('');
+        
+        // Show medical note if not needed
+        if (!needsMedical && medical) {
+            breakdownDiv.innerHTML += '<div class="text-yellow-300 mt-2">⚠️ هذا النوع من التأشيرات لا يحتاج فحص طبي</div>';
+        }
         
         document.getElementById('result').classList.remove('hidden');
         document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
