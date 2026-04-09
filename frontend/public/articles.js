@@ -75,7 +75,7 @@ const articles = {
             <div class="bg-gold text-white w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
             <div>
                 <h4 class="text-xl font-bold text-navy mb-2">العمر المناسب</h4>
-                <p class="text-gray-700">يجب أن يكون عمر المتقدم بين <strong>21 و 60 سنة</strong> للرجال، و <strong>25 و 55 سنة</strong> للنساء (تختلف حسب المهنة)</p>
+                <p class="text-gray-700">يجب أن يكون عمر المتقدم <strong>أكبر من 21 سنة وأقل من 60 سنة</strong> (للرجال والنساء)</p>
             </div>
         </div>
 
@@ -350,6 +350,14 @@ const articles = {
     </p>
 
     <div class="bg-gradient-to-br from-gold/10 to-gold/5 rounded-xl p-8 mb-8">
+        <div class="bg-blue-50 border-r-4 border-blue-500 p-6 rounded-lg mb-6">
+            <p class="text-gray-700 text-lg">
+                <i class="fas fa-info-circle text-blue-600 ml-2"></i>
+                <strong>ملاحظة مهمة:</strong> التكاليف أدناه تقريبية. للحصول على حساب دقيق حسب مهنتك وحالتك، استخدم 
+                <a href="calculator.html" class="text-blue-600 font-bold hover:underline">حاسبة الرسوم الذكية</a>.
+            </p>
+        </div>
+        
         <table class="w-full text-right">
             <thead>
                 <tr class="border-b-2 border-gold">
@@ -400,6 +408,79 @@ const articles = {
     </div>
 
     <h2 class="text-3xl font-bold text-navy mb-6 mt-12">المدة الزمنية للإجراءات</h2>
+    
+    <div class="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl p-8 mb-6">
+        <h3 class="text-2xl font-bold text-navy mb-4 flex items-center gap-3">
+            <i class="fas fa-info-circle text-blue-600"></i>
+            المدة تختلف حسب جاهزية الأوراق
+        </h3>
+        <p class="text-gray-700 text-lg mb-4">
+            المدة المتوقعة لإنجاز تأشيرة العمل تعتمد بشكل كبير على:
+        </p>
+        <ul class="space-y-2 text-gray-700 mb-6">
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-blue-600"></i>
+                <span>مسمى التأشيرة والمهنة</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-blue-600"></i>
+                <span>توفر الأوراق المطلوبة كاملة ومصدقة</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-blue-600"></i>
+                <span>إعطاء تفويض رسمي للمكتب</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-blue-600"></i>
+                <span>إتمام الاعتماد المهني (إنجاز)</span>
+            </li>
+        </ul>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-green-50 border-2 border-green-400 rounded-lg p-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <i class="fas fa-rocket text-green-600 text-3xl"></i>
+                    <h4 class="text-xl font-bold text-green-700">حالة: كل شيء جاهز</h4>
+                </div>
+                <p class="text-gray-700 mb-3">في حال توفر:</p>
+                <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                    <li>✓ جميع الأوراق مصدقة</li>
+                    <li>✓ تفويض رسمي للمكتب</li>
+                    <li>✓ اعتماد مهني منجز</li>
+                    <li>✓ رقم تأشيرة صادر</li>
+                </ul>
+                <div class="bg-green-600 text-white rounded-lg p-4 text-center">
+                    <p class="text-3xl font-bold">3 - 5</p>
+                    <p class="text-sm">أيام عمل فقط</p>
+                </div>
+            </div>
+
+            <div class="bg-orange-50 border-2 border-orange-400 rounded-lg p-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <i class="fas fa-clock text-orange-600 text-3xl"></i>
+                    <h4 class="text-xl font-bold text-orange-700">حالة: البدء من الصفر</h4>
+                </div>
+                <p class="text-gray-700 mb-3">في حال عدم توفر الأوراق:</p>
+                <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                    <li>○ تصديق الشهادات</li>
+                    <li>○ الاعتماد المهني</li>
+                    <li>○ إصدار رقم التأشيرة</li>
+                    <li>○ إجراءات التصديق</li>
+                </ul>
+                <div class="bg-orange-600 text-white rounded-lg p-4 text-center">
+                    <p class="text-3xl font-bold">15 - 25</p>
+                    <p class="text-sm">يوم عمل</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <p class="text-lg text-gray-700 mb-8 text-center bg-yellow-50 p-4 rounded-lg border-2 border-yellow-300">
+        <i class="fas fa-lightbulb text-yellow-600 ml-2"></i>
+        <strong>نصيحة:</strong> كلما كانت أوراقك جاهزة ومنظمة، كلما كانت المدة أقصر!
+    </p>
+
+    <h3 class="text-2xl font-bold text-navy mb-6">تفاصيل المدة لكل خطوة</h3>
     
     <div class="space-y-4 mb-8">
         <div class="flex items-center justify-between bg-white p-6 rounded-lg shadow-sm">
