@@ -1079,6 +1079,760 @@ const articles = {
     </div>
 </div>
         `
+    },
+    
+    // Article 3: Professional Accreditation
+    'professional-accreditation-enjaz': {
+        title: 'الاعتماد المهني السعودي (إنجاز): كل ما تحتاج معرفته',
+        date: '18 ديسمبر 2025',
+        readingTime: '10 دقيقة قراءة',
+        category: 'إنجاز',
+        excerpt: 'شرح مفصل لبرنامج الاعتماد المهني السعودي (إنجاز): التحقق المهني، الفحص المهني، الفرق بينهما، والمهن المطلوبة لكل نوع مع نصائح للنجاح.',
+        content: `
+<div class="article-content">
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-8">ما هو الاعتماد المهني السعودي؟</h2>
+    <p class="text-lg leading-relaxed mb-6">
+        <strong>برنامج الاعتماد المهني السعودي (إنجاز)</strong> هو نظام حكومي سعودي أُطلق لضمان جودة وكفاءة العمالة الوافدة. يهدف البرنامج إلى التحقق من أن مهارات ومؤهلات العامل تطابق المهنة المذكورة في تأشيرة العمل، مما يحسّن من جودة سوق العمل السعودي.
+    </p>
+    
+    <div class="bg-green-50 border-r-4 border-green-500 p-6 rounded-lg mb-8">
+        <h3 class="text-xl font-bold text-navy mb-3">
+            <i class="fas fa-star text-green-600 ml-2"></i>
+            لماذا أُنشئ هذا البرنامج؟
+        </h3>
+        <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-green-600"></i>
+                <span>ضمان توافق مهارات العامل مع المهنة المطلوبة</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-green-600"></i>
+                <span>الحد من التزوير في الشهادات والمؤهلات</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-green-600"></i>
+                <span>رفع مستوى الإنتاجية في سوق العمل السعودي</span>
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">نوعا الاعتماد المهني</h2>
+    
+    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+        <!-- التحقق المهني -->
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border-2 border-blue-300">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="bg-blue-600 text-white p-5 rounded-2xl">
+                    <i class="fas fa-user-graduate text-4xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-navy">التحقق المهني</h3>
+                    <p class="text-blue-700 font-semibold">للمؤهلات العليا</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 mb-6">
+                <h4 class="font-bold text-navy mb-3 flex items-center gap-2">
+                    <i class="fas fa-graduation-cap text-blue-600"></i>
+                    المؤهلات المطلوبة
+                </h4>
+                <p class="text-gray-700">
+                    للمهن التي تتطلب <strong class="text-blue-700">دبلوم فما فوق</strong> (بكالوريوس، ماجستير، دكتوراه)
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h4 class="font-bold text-navy mb-3">أمثلة على المهن:</h4>
+                <div class="space-y-2">
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-blue-600"></i>
+                        <span class="text-gray-700">المهندسين (جميع التخصصات)</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-blue-600"></i>
+                        <span class="text-gray-700">أخصائي استشارات أعمال</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-blue-600"></i>
+                        <span class="text-gray-700">أخصائي تسويق</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-blue-600"></i>
+                        <span class="text-gray-700">مندوب مبيعات</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-blue-600"></i>
+                        <span class="text-gray-700">المهن الإدارية</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-600 text-white rounded-xl p-5">
+                <h4 class="font-bold mb-2">طريقة التحقق:</h4>
+                <p class="text-blue-50">
+                    مراجعة وتحقق من الشهادات والمؤهلات العلمية والخبرات العملية
+                </p>
+            </div>
+        </div>
+
+        <!-- الفحص المهني -->
+        <div class="bg-gradient-to-br from-gold/10 to-gold/5 rounded-2xl p-8 border-2 border-gold">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="bg-gradient-to-br from-gold to-yellow-600 text-white p-5 rounded-2xl">
+                    <i class="fas fa-clipboard-list text-4xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-navy">الفحص المهني</h3>
+                    <p class="text-gold font-semibold">للمهن الحرفية</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 mb-6">
+                <h4 class="font-bold text-navy mb-3 flex items-center gap-2">
+                    <i class="fas fa-hard-hat text-gold"></i>
+                    المؤهلات المطلوبة
+                </h4>
+                <p class="text-gray-700">
+                    للمهن التي <strong class="text-navy">لا تتطلب دبلوم أو بكالوريوس</strong>
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h4 class="font-bold text-navy mb-3">أمثلة على المهن:</h4>
+                <div class="space-y-2">
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        <span class="text-gray-700">مهن العمالة المنزلية</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        <span class="text-gray-700">عامل تحميل وتنزيل</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        <span class="text-gray-700">عامل مخزن</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        <span class="text-gray-700">عامل تعبئة وتغليف</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        <span class="text-gray-700">مراقب جودة</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-lg flex items-center gap-2">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        <span class="text-gray-700">منسق زهور</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-gold to-yellow-600 text-white rounded-xl p-5">
+                <h4 class="font-bold mb-2">طريقة الفحص:</h4>
+                <p class="text-white/90 mb-3">
+                    امتحان نظري حسب مسمى التأشيرة
+                </p>
+                <div class="bg-white/20 rounded-lg p-3 flex items-center gap-3">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="font-semibold">مركز الامتحان: أمديست الأردن</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">خطوات إجراء الاعتماد المهني</h2>
+    
+    <div class="space-y-6 mb-8">
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-gold">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-gold text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                <h3 class="text-2xl font-bold text-navy">الحصول على رقم التأشيرة</h3>
+            </div>
+            <p class="text-gray-700">
+                يجب أولاً الحصول على رقم تأشيرة عمل من الكفيل السعودي. رقم التأشيرة مطلوب للتسجيل في برنامج إنجاز.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-blue-500">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                <h3 class="text-2xl font-bold text-navy">التسجيل في منصة إنجاز</h3>
+            </div>
+            <p class="text-gray-700 mb-3">
+                قم بزيارة موقع إنجاز الإلكتروني أو تواصل معنا للتسجيل. ستحتاج:
+            </p>
+            <ul class="list-disc list-inside space-y-1 text-gray-700 mr-6">
+                <li>رقم التأشيرة</li>
+                <li>جواز السفر</li>
+                <li>الشهادات (للتحقق المهني)</li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-green-500">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-green-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                <h3 class="text-2xl font-bold text-navy">حجز موعد الفحص (للفحص المهني)</h3>
+            </div>
+            <p class="text-gray-700">
+                إذا كانت مهنتك تتطلب فحص مهني، احجز موعد في <strong>مركز أمديست الأردن</strong>. الامتحان نظري ويستغرق 30-60 دقيقة.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-purple-500">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-purple-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">4</div>
+                <h3 class="text-2xl font-bold text-navy">الحصول على شهادة الاعتماد</h3>
+            </div>
+            <p class="text-gray-700">
+                بعد اجتياز الفحص أو اعتماد الشهادات، ستحصل على شهادة الاعتماد المهني خلال 2-3 أيام. هذه الشهادة إلزامية لطباعة التأشيرة.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">المدة والتكلفة</h2>
+    
+    <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-navy mb-6 flex items-center gap-3">
+                <i class="fas fa-clock text-blue-600 text-3xl"></i>
+                المدة الزمنية
+            </h3>
+            <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg">
+                    <h4 class="font-bold text-navy mb-2">التحقق المهني</h4>
+                    <p class="text-gray-700">2-3 أيام عمل</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                    <h4 class="font-bold text-navy mb-2">الفحص المهني</h4>
+                    <p class="text-gray-700">3-5 أيام عمل (شامل الامتحان)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-navy mb-6 flex items-center gap-3">
+                <i class="fas fa-money-bill-wave text-green-600 text-3xl"></i>
+                التكلفة التقريبية
+            </h3>
+            <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg">
+                    <h4 class="font-bold text-navy mb-2">رسوم إنجاز</h4>
+                    <p class="text-gray-700">30-50 دينار أردني</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                    <h4 class="font-bold text-navy mb-2">رسوم المكتب</h4>
+                    <p class="text-gray-700">حسب الخدمة المطلوبة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-yellow-50 border-r-4 border-yellow-500 p-6 rounded-lg mb-8">
+        <p class="text-gray-700">
+            <i class="fas fa-info-circle text-yellow-600 ml-2"></i>
+            <strong>نحن نساعدك:</strong> نوفر خدمة كاملة للتسجيل وحجز الموعد ومتابعة النتيجة. 
+            <a href="professional.html" class="text-yellow-700 font-bold hover:underline">تعرف على خدماتنا</a>
+        </p>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">نصائح للنجاح في الاعتماد المهني</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+            <h4 class="text-xl font-bold text-navy mb-3 flex items-center gap-2">
+                <i class="fas fa-book text-green-600"></i>
+                للفحص المهني
+            </h4>
+            <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-green-600 mt-1"></i>
+                    <span>راجع المعلومات الأساسية عن مهنتك</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-green-600 mt-1"></i>
+                    <span>تدرب على أسئلة نموذجية</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-green-600 mt-1"></i>
+                    <span>احضر قبل الموعد بـ 15 دقيقة</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+            <h4 class="text-xl font-bold text-navy mb-3 flex items-center gap-2">
+                <i class="fas fa-file-alt text-blue-600"></i>
+                للتحقق المهني
+            </h4>
+            <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-blue-600 mt-1"></i>
+                    <span>تأكد من تصديق جميع الشهادات</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-blue-600 mt-1"></i>
+                    <span>أحضر شهادات الخبرة موثقة</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <i class="fas fa-check text-blue-600 mt-1"></i>
+                    <span>راجع البيانات في رقم التأشيرة</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-navy to-navy-dark text-white rounded-2xl p-10 text-center">
+        <h3 class="text-3xl font-bold mb-4">تحتاج مساعدة في الاعتماد المهني؟</h3>
+        <p class="text-xl mb-6">نحن نساعدك في كل خطوة - من التسجيل حتى الحصول على الشهادة!</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="https://wa.me/962789881009?text=مرحباً، أحتاج مساعدة في الاعتماد المهني" 
+               class="bg-gold hover:bg-gold/90 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg text-lg">
+                <i class="fab fa-whatsapp ml-2"></i>
+                واتساب: 0789881009
+            </a>
+            <a href="professional.html" 
+               class="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all border-2 border-white/30 text-lg">
+                <i class="fas fa-info-circle ml-2"></i>
+                تفاصيل البرنامج
+            </a>
+        </div>
+    </div>
+</div>
+        `
+    },
+    
+    // Article 4: Top Professions
+    'top-professions-saudi-2025': {
+        title: 'المهن الأكثر طلباً في السعودية 2025',
+        date: '15 ديسمبر 2025',
+        readingTime: '8 دقيقة قراءة',
+        category: 'مهن',
+        excerpt: 'قائمة شاملة بأكثر المهن المطلوبة في سوق العمل السعودي لعام 2025، الرواتب المتوقعة، الشروط، والأوراق المطلوبة لكل مهنة مع نصائح للتقديم.',
+        content: `
+<div class="article-content">
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-8">مقدمة</h2>
+    <p class="text-lg leading-relaxed mb-6">
+        سوق العمل السعودي يشهد طلباً متزايداً على مهن محددة في عام 2025، مدفوعاً برؤية المملكة 2030 والمشاريع الضخمة مثل نيوم والقدية والبحر الأحمر. في هذا المقال، نستعرض أكثر المهن المطلوبة مع تفاصيل الرواتب والمتطلبات.
+    </p>
+
+    <div class="bg-gold/10 border-r-4 border-gold p-6 rounded-lg mb-8">
+        <h3 class="text-xl font-bold text-navy mb-3">
+            <i class="fas fa-chart-line text-gold ml-2"></i>
+            لماذا هذه المهن؟
+        </h3>
+        <p class="text-gray-700">
+            المهن المذكورة تعتمد على دراسات سوق العمل السعودي، إعلانات التوظيف، ومتطلبات المشاريع الكبرى في المملكة.
+        </p>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">أكثر 15 مهنة طلباً</h2>
+
+    <div class="space-y-8 mb-12">
+        <!-- 1. مهندسون -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-blue-600">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-navy">المهندسون</h3>
+                    <p class="text-blue-600 font-semibold">مدني، كهرباء، ميكانيك، معماري</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">الراتب الشهري</p>
+                    <p class="text-xl font-bold text-navy">3,000 - 8,000 ريال</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">المؤهل</p>
+                    <p class="text-xl font-bold text-navy">بكالوريوس هندسة</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">الخبرة</p>
+                    <p class="text-xl font-bold text-navy">3-5 سنوات</p>
+                </div>
+            </div>
+            <p class="text-gray-700">
+                <strong>الطلب:</strong> مرتفع جداً بسبب المشاريع الضخمة (نيوم، القدية). 
+                <a href="professions.html" class="text-blue-600 font-bold hover:underline">ابحث عن مهنتك</a>
+            </p>
+        </div>
+
+        <!-- 2. أطباء وممرضون -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-green-600">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-navy">الطاقم الطبي</h3>
+                    <p class="text-green-600 font-semibold">أطباء، ممرضون، صيادلة، فنيو مختبرات</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">الراتب الشهري</p>
+                    <p class="text-xl font-bold text-navy">4,000 - 15,000 ريال</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">المؤهل</p>
+                    <p class="text-xl font-bold text-navy">بكالوريوس طب/تمريض</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">الخبرة</p>
+                    <p class="text-xl font-bold text-navy">2-7 سنوات</p>
+                </div>
+            </div>
+            <p class="text-gray-700">
+                <strong>الطلب:</strong> مستمر طوال العام، خاصة في المستشفيات الخاصة والمراكز الطبية الحديثة.
+            </p>
+        </div>
+
+        <!-- 3. مبرمجون ومطورون -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-purple-600">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-navy">تقنية المعلومات</h3>
+                    <p class="text-purple-600 font-semibold">مبرمجون، مطورو تطبيقات، أمن سيبراني</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">الراتب الشهري</p>
+                    <p class="text-xl font-bold text-navy">3,500 - 9,000 ريال</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">المؤهل</p>
+                    <p class="text-xl font-bold text-navy">بكالوريوس IT</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-600 mb-1">الخبرة</p>
+                    <p class="text-xl font-bold text-navy">2-5 سنوات</p>
+                </div>
+            </div>
+            <p class="text-gray-700">
+                <strong>الطلب:</strong> متزايد بسبب التحول الرقمي ورؤية 2030.
+            </p>
+        </div>
+
+        <!-- Condensed list for remaining professions -->
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-navy mb-6 text-center">مهن أخرى عالية الطلب</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-navy mb-2 flex items-center gap-2">
+                        <span class="bg-gold text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
+                        محاسبون ومراجعون
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-1">الراتب: 2,500 - 6,000 ريال</p>
+                    <p class="text-sm text-gray-700">المؤهل: بكالوريوس محاسبة + CPA (مفضل)</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-navy mb-2 flex items-center gap-2">
+                        <span class="bg-gold text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">5</span>
+                        مندوبو مبيعات
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-1">الراتب: 2,000 - 5,000 ريال + عمولة</p>
+                    <p class="text-sm text-gray-700">المؤهل: ثانوية عامة + خبرة</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-navy mb-2 flex items-center gap-2">
+                        <span class="bg-gold text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">6</span>
+                        فنيو صيانة (كهرباء، تكييف)
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-1">الراتب: 1,800 - 4,000 ريال</p>
+                    <p class="text-sm text-gray-700">المؤهل: دبلوم فني + خبرة عملية</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-navy mb-2 flex items-center gap-2">
+                        <span class="bg-gold text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">7</span>
+                        عمال بناء وإنشاءات
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-1">الراتب: 1,500 - 3,500 ريال</p>
+                    <p class="text-sm text-gray-700">المؤهل: خبرة عملية في المجال</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-navy mb-2 flex items-center gap-2">
+                        <span class="bg-gold text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">8</span>
+                        سائقون
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-1">الراتب: 1,800 - 3,500 ريال</p>
+                    <p class="text-sm text-gray-700">المؤهل: رخصة قيادة سارية</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-navy mb-2 flex items-center gap-2">
+                        <span class="bg-gold text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">9</span>
+                        عمالة منزلية
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-1">الراتب: 1,500 - 2,500 ريال</p>
+                    <p class="text-sm text-gray-700">المؤهل: خبرة في المهنة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">كيف تختار المهنة المناسبة؟</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-blue-50 border-2 border-blue-300 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-navy mb-3 flex items-center gap-2">
+                <i class="fas fa-check-circle text-blue-600"></i>
+                راجع مؤهلاتك
+            </h4>
+            <p class="text-gray-700">
+                تأكد أن شهاداتك وخبراتك تطابق متطلبات المهنة المطلوبة.
+            </p>
+        </div>
+
+        <div class="bg-green-50 border-2 border-green-300 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-navy mb-3 flex items-center gap-2">
+                <i class="fas fa-search text-green-600"></i>
+                ابحث عن الفرص
+            </h4>
+            <p class="text-gray-700">
+                استخدم <a href="professions.html" class="text-green-600 font-bold hover:underline">صفحة المهن</a> لمعرفة الأوراق المطلوبة لكل مهنة.
+            </p>
+        </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-gold to-yellow-600 text-white rounded-2xl p-10 text-center">
+        <h3 class="text-3xl font-bold mb-4">جاهز للتقديم على وظيفتك المثالية؟</h3>
+        <p class="text-xl mb-6">نساعدك في إنجاز جميع إجراءات التأشيرة بسرعة ودقة!</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="https://wa.me/962789881009?text=مرحباً، أريد الاستفسار عن تأشيرة عمل" 
+               class="bg-white text-gold px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-lg text-lg">
+                <i class="fab fa-whatsapp ml-2"></i>
+                واتساب: 0789881009
+            </a>
+            <a href="professions.html" 
+               class="bg-navy text-white px-10 py-4 rounded-xl font-bold hover:bg-navy-dark transition-all text-lg">
+                <i class="fas fa-search ml-2"></i>
+                ابحث عن مهنتك
+            </a>
+        </div>
+    </div>
+</div>
+        `
+    },
+    
+    // Article 5: Common Mistakes
+    'common-visa-mistakes': {
+        title: '10 أخطاء شائعة تمنع قبول تأشيرتك السعودية',
+        date: '12 ديسمبر 2025',
+        readingTime: '7 دقيقة قراءة',
+        category: 'نصائح',
+        excerpt: 'تعرف على الأخطاء الأكثر شيوعاً التي يقع فيها المتقدمون على التأشيرات السعودية وكيفية تجنبها لضمان قبول طلبك من المرة الأولى.',
+        content: `
+<div class="article-content">
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-8">مقدمة</h2>
+    <p class="text-lg leading-relaxed mb-6">
+        الحصول على تأشيرة عمل سعودية ليس بالأمر الصعب، لكن هناك أخطاء شائعة قد تؤدي إلى رفض طلبك أو تأخيره لأسابيع. في هذا المقال، نستعرض أكثر 10 أخطاء شيوعاً وكيفية تجنبها.
+    </p>
+
+    <div class="bg-red-50 border-r-4 border-red-500 p-6 rounded-lg mb-8">
+        <h3 class="text-xl font-bold text-navy mb-3">
+            <i class="fas fa-exclamation-triangle text-red-600 ml-2"></i>
+            لماذا هذا المقال مهم؟
+        </h3>
+        <p class="text-gray-700">
+            تجنب هذه الأخطاء يوفر عليك الوقت والمال، ويضمن قبول تأشيرتك من المرة الأولى!
+        </p>
+    </div>
+
+    <div class="space-y-8 mb-12">
+        <!-- Mistake 1 -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-red-600">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+                <h3 class="text-2xl font-bold text-navy">عدم تصديق جميع الوثائق</h3>
+            </div>
+            <div class="bg-red-50 p-6 rounded-lg mb-4">
+                <h4 class="font-bold text-red-700 mb-2">الخطأ:</h4>
+                <p class="text-gray-700">
+                    البعض يصدق الشهادة الجامعية فقط وينسى كشف العلامات أو شهادات الخبرة.
+                </p>
+            </div>
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h4 class="font-bold text-green-700 mb-2">الحل:</h4>
+                <p class="text-gray-700">
+                    صدّق <strong>جميع</strong> الوثائق المذكورة في قائمة الأوراق المطلوبة. 
+                    <a href="professions.html" class="text-green-600 font-bold hover:underline">راجع قائمة مهنتك</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Mistake 2 -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-orange-600">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                <h3 class="text-2xl font-bold text-navy">التأخير في الإجراءات</h3>
+            </div>
+            <div class="bg-orange-50 p-6 rounded-lg mb-4">
+                <h4 class="font-bold text-orange-700 mb-2">الخطأ:</h4>
+                <p class="text-gray-700">
+                    تأجيل التصديقات والاعتماد المهني. رقم التأشيرة صالح لـ <strong>90 يوم فقط</strong>!
+                </p>
+            </div>
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h4 class="font-bold text-green-700 mb-2">الحل:</h4>
+                <p class="text-gray-700">
+                    ابدأ الإجراءات فوراً بعد الحصول على رقم التأشيرة. نحن ننجز كل شيء في <strong>3-5 أيام</strong>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Mistake 3 -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-purple-600">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+                <h3 class="text-2xl font-bold text-navy">أخطاء في البيانات الشخصية</h3>
+            </div>
+            <div class="bg-purple-50 p-6 rounded-lg mb-4">
+                <h4 class="font-bold text-purple-700 mb-2">الخطأ:</h4>
+                <p class="text-gray-700">
+                    اختلاف الاسم بين جواز السفر والشهادة (حتى حرف واحد يمكن أن يسبب الرفض).
+                </p>
+            </div>
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h4 class="font-bold text-green-700 mb-2">الحل:</h4>
+                <p class="text-gray-700">
+                    راجع الاسم والتواريخ في جميع الوثائق. يجب أن تطابق بالضبط ما في جواز السفر.
+                </p>
+            </div>
+        </div>
+
+        <!-- Mistake 4 -->
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-blue-600">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+                <h3 class="text-2xl font-bold text-navy">عدم إجراء الاعتماد المهني (إنجاز)</h3>
+            </div>
+            <div class="bg-blue-50 p-6 rounded-lg mb-4">
+                <h4 class="font-bold text-blue-700 mb-2">الخطأ:</h4>
+                <p class="text-gray-700">
+                    تجاهل الاعتماد المهني ظناً أنه اختياري. هو <strong>إلزامي</strong> لمعظم المهن!
+                </p>
+            </div>
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h4 class="font-bold text-green-700 mb-2">الحل:</h4>
+                <p class="text-gray-700">
+                    تواصل معنا لمعرفة إذا كانت مهنتك تتطلب اعتماد مهني. 
+                    <a href="professional.html" class="text-green-600 font-bold hover:underline">اقرأ المزيد عن إنجاز</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Condensed mistakes 5-10 -->
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8">
+            <h3 class="text-2xl font-bold text-navy mb-6">أخطاء أخرى شائعة</h3>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow flex items-start gap-4">
+                    <div class="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">5</div>
+                    <div>
+                        <h4 class="font-bold text-navy mb-2">صور شخصية غير مطابقة للمواصفات</h4>
+                        <p class="text-sm text-gray-700">يجب أن تكون الخلفية بيضاء، المقاس 4×6، والصورة حديثة.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow flex items-start gap-4">
+                    <div class="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">6</div>
+                    <div>
+                        <h4 class="font-bold text-navy mb-2">جواز السفر منتهي أو قريب الانتهاء</h4>
+                        <p class="text-sm text-gray-700">يجب أن يكون صالحاً لمدة 6 أشهر على الأقل.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow flex items-start gap-4">
+                    <div class="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">7</div>
+                    <div>
+                        <h4 class="font-bold text-navy mb-2">ترجمة غير معتمدة</h4>
+                        <p class="text-sm text-gray-700">الترجمة يجب أن تكون من مترجم محلف معتمد فقط.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow flex items-start gap-4">
+                    <div class="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">8</div>
+                    <div>
+                        <h4 class="font-bold text-navy mb-2">عدم دفع الرسوم بشكل صحيح</h4>
+                        <p class="text-sm text-gray-700">احتفظ بإيصالات الدفع لجميع الرسوم (السفارة، التصديقات، إلخ).</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow flex items-start gap-4">
+                    <div class="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">9</div>
+                    <div>
+                        <h4 class="font-bold text-navy mb-2">التعامل مع وسطاء غير موثوقين</h4>
+                        <p class="text-sm text-gray-700">تعامل فقط مع مكاتب معتمدة ومرخصة من السفارة السعودية.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow flex items-start gap-4">
+                    <div class="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">10</div>
+                    <div>
+                        <h4 class="font-bold text-navy mb-2">عدم المتابعة المستمرة</h4>
+                        <p class="text-sm text-gray-700">تابع حالة طلبك يومياً. نحن نوفر متابعة يومية لجميع ملفات عملائنا.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">كيف نساعدك في تجنب هذه الأخطاء؟</h2>
+    
+    <div class="bg-gradient-to-br from-gold/10 to-gold/5 rounded-xl p-8 mb-8">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold text-2xl mt-1"></i>
+                <div>
+                    <h4 class="font-bold text-navy mb-2">مراجعة شاملة للوثائق</h4>
+                    <p class="text-gray-700">نراجع جميع أوراقك قبل التقديم لضمان عدم وجود أخطاء</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold text-2xl mt-1"></i>
+                <div>
+                    <h4 class="font-bold text-navy mb-2">سرعة في الإنجاز</h4>
+                    <p class="text-gray-700">ننجز معاملتك كاملة في 3-5 أيام عمل</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold text-2xl mt-1"></i>
+                <div>
+                    <h4 class="font-bold text-navy mb-2">متابعة يومية</h4>
+                    <p class="text-gray-700">نتابع ملفك يومياً ونبلغك بأي تحديث</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-gold text-2xl mt-1"></i>
+                <div>
+                    <h4 class="font-bold text-navy mb-2">ضمان القبول</h4>
+                    <p class="text-gray-700">نسبة نجاح 98% في قبول التأشيرات</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-navy to-navy-dark text-white rounded-2xl p-10 text-center">
+        <h3 class="text-3xl font-bold mb-4">لا تقع في هذه الأخطاء!</h3>
+        <p class="text-xl mb-6">دع الخبراء يساعدونك - تواصل معنا الآن!</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="https://wa.me/962789881009?text=مرحباً، أريد مساعدة في تجنب الأخطاء في تأشيرتي" 
+               class="bg-gold hover:bg-gold/90 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg text-lg">
+                <i class="fab fa-whatsapp ml-2"></i>
+                واتساب: 0789881009
+            </a>
+            <a href="calculator.html" 
+               class="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all border-2 border-white/30 text-lg">
+                <i class="fas fa-calculator ml-2"></i>
+                احسب التكلفة
+            </a>
+        </div>
+    </div>
+</div>
+        `
     }
 };
 
