@@ -472,6 +472,12 @@ if (typeof module !== 'undefined' && module.exports) {
 (function() {
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dot');
+    
+    // Only run if slider elements exist
+    if (slides.length === 0 || dots.length === 0) {
+        return;
+    }
+    
     let currentSlide = 0;
     const slideInterval = 5000; // 5 seconds
 
@@ -481,8 +487,10 @@ if (typeof module !== 'undefined' && module.exports) {
         dots.forEach(dot => dot.classList.remove('active'));
         
         // Add active class to current slide and dot
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
+        if (slides[index] && dots[index]) {
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
     }
 
     function nextSlide() {
@@ -537,16 +545,20 @@ if (typeof module !== 'undefined' && module.exports) {
 
     // Observe all sections
     const sections = document.querySelectorAll('section:not(#home)');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    if (sections.length > 0) {
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    }
 
     // Observe all cards
     const cards = document.querySelectorAll('.card-3d, .blog-card');
-    cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
+    if (cards.length > 0) {
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+    }
 })();
 
 // ======================
