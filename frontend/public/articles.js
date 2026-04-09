@@ -689,6 +689,396 @@ const articles = {
     </div>
 </div>
         `
+    },
+    
+    // Article 2: Certificate Attestation Guide
+    'certificate-attestation-guide': {
+        title: 'تصديق الشهادات من السفارة السعودية: الدليل الكامل',
+        date: '20 ديسمبر 2025',
+        readingTime: '12 دقيقة قراءة',
+        category: 'تصديقات',
+        excerpt: 'دليل تفصيلي لتصديق جميع أنواع الشهادات الجامعية والوثائق الرسمية من السفارة السعودية في الأردن: الخطوات، المتطلبات، والأخطاء الشائعة.',
+        content: `
+<div class="article-content">
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-8">مقدمة</h2>
+    <p class="text-lg leading-relaxed mb-6">
+        <strong>تصديق الشهادات من السفارة السعودية</strong> هو إجراء إلزامي لأي شخص يرغب في العمل أو الدراسة في المملكة العربية السعودية. هذه العملية تضمن صحة وأصالة الوثائق التعليمية والرسمية، وتعتبر خطوة أساسية قبل السفر. في هذا الدليل الشامل، سنشرح كل ما تحتاج معرفته عن تصديق الشهادات من السفارة السعودية في عمّان.
+    </p>
+    
+    <div class="bg-blue-50 border-r-4 border-blue-500 p-6 rounded-lg mb-8">
+        <h3 class="text-xl font-bold text-navy mb-3">
+            <i class="fas fa-exclamation-circle text-blue-600 ml-2"></i>
+            لماذا التصديق مهم؟
+        </h3>
+        <p class="text-gray-700">
+            التصديق يثبت أن الشهادات والوثائق صادرة من جهات رسمية معترف بها، ويمنع التزوير. بدون التصديق، لن تُقبل وثائقك في السعودية.
+        </p>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">ما هو تصديق الشهادات؟</h2>
+    <p class="text-lg leading-relaxed mb-6">
+        تصديق الشهادات هو عملية رسمية تتم على مرحلتين:
+    </p>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border-2 border-green-300">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                <h3 class="text-xl font-bold text-navy">وزارة الخارجية الأردنية</h3>
+            </div>
+            <p class="text-gray-700">
+                أولاً: تصديق الوثيقة من وزارة الخارجية الأردنية. هذا يثبت أن الوثيقة صادرة من جهة رسمية أردنية.
+            </p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-gold/10 to-gold/5 p-6 rounded-xl border-2 border-gold">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="bg-gold text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                <h3 class="text-xl font-bold text-navy">السفارة السعودية</h3>
+            </div>
+            <p class="text-gray-700">
+                ثانياً: تصديق الوثيقة من السفارة السعودية في عمّان. هذا يجعلها معترف بها رسمياً في السعودية.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">أنواع الوثائق التي تحتاج تصديق</h2>
+    
+    <div class="space-y-6 mb-8">
+        <div class="bg-white rounded-xl shadow-lg p-6 border-r-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-navy mb-4 flex items-center gap-3">
+                <i class="fas fa-graduation-cap text-blue-600 text-3xl"></i>
+                الشهادات التعليمية
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                    <span><strong>الشهادات الجامعية:</strong> بكالوريوس، ماجستير، دكتوراه + كشف علامات</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                    <span><strong>الدبلومات:</strong> دبلوم متوسط، دبلوم عالي</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                    <span><strong>الثانوية العامة:</strong> شهادة التوجيهي + كشف علامات</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                    <span><strong>شهادات الخبرة:</strong> من الجامعات والمؤسسات التعليمية</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-6 border-r-4 border-green-500">
+            <h3 class="text-2xl font-bold text-navy mb-4 flex items-center gap-3">
+                <i class="fas fa-file-alt text-green-600 text-3xl"></i>
+                وثائق الأحوال المدنية
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                    <span><strong>شهادة الميلاد:</strong> للمواليد الجدد أو للاستخدام الرسمي</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                    <span><strong>شهادة الزواج:</strong> لإضافة الزوجة إلى الإقامة</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                    <span><strong>شهادة الطلاق:</strong> للحالات الخاصة</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                    <span><strong>شهادة الوفاة:</strong> للمعاملات الإدارية</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-6 border-r-4 border-purple-500">
+            <h3 class="text-2xl font-bold text-navy mb-4 flex items-center gap-3">
+                <i class="fas fa-briefcase text-purple-600 text-3xl"></i>
+                الوثائق المهنية والقانونية
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                    <span><strong>شهادات الخبرة العملية:</strong> من أصحاب العمل السابقين</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                    <span><strong>الوكالات:</strong> وكالة عامة، وكالة خاصة، وكالة أمانة</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                    <span><strong>شهادة عدم محكومية:</strong> (حسن سيرة وسلوك)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                    <span><strong>السجلات التجارية:</strong> للشركات والمستثمرين</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                    <span><strong>التقارير الطبية:</strong> بدون ذكر نوع الدواء</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">خطوات تصديق الشهادات (مرحلة بمرحلة)</h2>
+    
+    <div class="space-y-6 mb-8">
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-gold">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-gold text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                <h3 class="text-2xl font-bold text-navy">تحضير الوثائق الأصلية</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                احضر الوثائق الأصلية (ليس صور). يجب أن تكون:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mr-6">
+                <li>صادرة من جهات رسمية معترف بها</li>
+                <li>سارية المفعول (إن كانت محددة بمدة)</li>
+                <li>واضحة وغير تالفة</li>
+                <li>باللغة العربية (أو مترجمة من مترجم محلف)</li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-green-500">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-green-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                <h3 class="text-2xl font-bold text-navy">التصديق من وزارة الخارجية الأردنية</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                <strong>المكان:</strong> مبنى وزارة الخارجية الأردنية - عمّان
+            </p>
+            <p class="text-gray-700 mb-4">
+                <strong>المستندات المطلوبة:</strong>
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mr-6 mb-4">
+                <li>الوثيقة الأصلية المراد تصديقها</li>
+                <li>صورة عن الهوية الشخصية أو جواز السفر</li>
+                <li>رسوم التصديق (حوالي 10-15 دينار للوثيقة)</li>
+            </ul>
+            <div class="bg-green-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-clock text-green-600 ml-1"></i>
+                    <strong>المدة:</strong> من 1 إلى 3 أيام عمل
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-blue-500">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                <h3 class="text-2xl font-bold text-navy">التصديق من السفارة السعودية</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                بعد تصديق الوثيقة من الخارجية الأردنية، توجه إلى السفارة السعودية.
+            </p>
+            <p class="text-gray-700 mb-4">
+                <strong>المستندات المطلوبة:</strong>
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mr-6 mb-4">
+                <li>الوثيقة الأصلية مصدقة من الخارجية الأردنية</li>
+                <li>صورة عن جواز السفر</li>
+                <li>رقم التأشيرة (إن كان التصديق متعلق بتأشيرة عمل)</li>
+                <li>رسوم التصديق</li>
+            </ul>
+            <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-clock text-blue-600 ml-1"></i>
+                    <strong>المدة:</strong> من 2 إلى 5 أيام عمل
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8 border-r-4 border-purple-500">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="bg-purple-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">4</div>
+                <h3 class="text-2xl font-bold text-navy">استلام الوثائق المصدقة</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                بعد إتمام التصديق، استلم وثائقك وتأكد من:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mr-6">
+                <li>وجود ختم وزارة الخارجية الأردنية</li>
+                <li>وجود ختم السفارة السعودية</li>
+                <li>وضوح جميع الأختام والتواقيع</li>
+                <li>عدم وجود أي تلف أو خدش</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">التكلفة والمدة</h2>
+    
+    <div class="bg-gradient-to-br from-gold/10 to-gold/5 rounded-xl p-8 mb-8">
+        <table class="w-full text-right">
+            <thead>
+                <tr class="border-b-2 border-gold">
+                    <th class="py-3 text-navy font-bold">الإجراء</th>
+                    <th class="py-3 text-navy font-bold">التكلفة</th>
+                    <th class="py-3 text-navy font-bold">المدة</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                <tr class="border-b border-gray-200">
+                    <td class="py-3">تصديق من الخارجية الأردنية</td>
+                    <td class="py-3 font-semibold">10-15 دينار/وثيقة</td>
+                    <td class="py-3">1-3 أيام</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="py-3">تصديق من السفارة السعودية</td>
+                    <td class="py-3 font-semibold">15-25 دينار/وثيقة</td>
+                    <td class="py-3">2-5 أيام</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="py-3">الترجمة (إن لزم)</td>
+                    <td class="py-3 font-semibold">5-15 دينار/صفحة</td>
+                    <td class="py-3">1-2 يوم</td>
+                </tr>
+                <tr class="border-b-2 border-gold font-bold text-navy">
+                    <td class="py-3">التكلفة الإجمالية</td>
+                    <td class="py-3">25-40 دينار/وثيقة</td>
+                    <td class="py-3">3-8 أيام</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="bg-yellow-50 border-r-4 border-yellow-500 p-6 rounded-lg mb-8">
+        <h3 class="text-xl font-bold text-navy mb-3">
+            <i class="fas fa-bolt text-yellow-600 ml-2"></i>
+            خدمتنا السريعة
+        </h3>
+        <p class="text-gray-700 mb-3">
+            نحن نقدم خدمة تصديق شاملة توفر عليك:
+        </p>
+        <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-yellow-600"></i>
+                <span>الوقت: ننجز التصديق الكامل في <strong>3-5 أيام عمل</strong></span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-yellow-600"></i>
+                <span>الجهد: نحن نذهب للخارجية والسفارة نيابة عنك</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <i class="fas fa-check text-yellow-600"></i>
+                <span>الدقة: نضمن صحة جميع الإجراءات 100%</span>
+            </li>
+        </ul>
+        <a href="certificates.html" class="inline-block mt-4 text-yellow-700 font-bold hover:underline">
+            تعرف على خدماتنا <i class="fas fa-arrow-left mr-1"></i>
+        </a>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">أخطاء شائعة يجب تجنبها</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-red-700 mb-3 flex items-center gap-2">
+                <i class="fas fa-times-circle"></i>
+                عدم تصديق كشف العلامات
+            </h4>
+            <p class="text-gray-700">
+                البعض يصدق الشهادة فقط وينسى كشف العلامات. كلاهما مطلوب!
+            </p>
+        </div>
+
+        <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-red-700 mb-3 flex items-center gap-2">
+                <i class="fas fa-times-circle"></i>
+                تصديق صور بدلاً من الأصول
+            </h4>
+            <p class="text-gray-700">
+                يجب تصديق الوثيقة الأصلية. الصور غير مقبولة.
+            </p>
+        </div>
+
+        <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-red-700 mb-3 flex items-center gap-2">
+                <i class="fas fa-times-circle"></i>
+                تأخير التصديق
+            </h4>
+            <p class="text-gray-700">
+                رقم التأشيرة صالح لـ 90 يوم فقط. لا تؤخر التصديق!
+            </p>
+        </div>
+
+        <div class="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+            <h4 class="text-xl font-bold text-red-700 mb-3 flex items-center gap-2">
+                <i class="fas fa-times-circle"></i>
+                ترجمة غير معتمدة
+            </h4>
+            <p class="text-gray-700">
+                الترجمة يجب أن تكون من مترجم محلف معتمد فقط.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-navy mb-6 mt-12">الأسئلة الشائعة</h2>
+    
+    <div class="space-y-4 mb-8">
+        <details class="bg-white rounded-lg shadow-md overflow-hidden">
+            <summary class="px-6 py-4 cursor-pointer font-bold text-navy hover:bg-gray-50 transition-colors flex items-center justify-between">
+                <span>هل يمكن تصديق صور الوثائق؟</span>
+                <i class="fas fa-chevron-down text-gold"></i>
+            </summary>
+            <div class="px-6 py-4 text-gray-700 border-t border-gray-100">
+                لا، يجب تصديق الوثيقة الأصلية فقط. الصور غير مقبولة.
+            </div>
+        </details>
+
+        <details class="bg-white rounded-lg shadow-md overflow-hidden">
+            <summary class="px-6 py-4 cursor-pointer font-bold text-navy hover:bg-gray-50 transition-colors flex items-center justify-between">
+                <span>كم يستغرق تصديق الشهادات؟</span>
+                <i class="fas fa-chevron-down text-gold"></i>
+            </summary>
+            <div class="px-6 py-4 text-gray-700 border-t border-gray-100">
+                من 3 إلى 8 أيام عمل للعملية الكاملة. مع خدمتنا، ننجزها في 3-5 أيام.
+            </div>
+        </details>
+
+        <details class="bg-white rounded-lg shadow-md overflow-hidden">
+            <summary class="px-6 py-4 cursor-pointer font-bold text-navy hover:bg-gray-50 transition-colors flex items-center justify-between">
+                <span>هل التصديق ضروري لجميع الوثائق؟</span>
+                <i class="fas fa-chevron-down text-gold"></i>
+            </summary>
+            <div class="px-6 py-4 text-gray-700 border-t border-gray-100">
+                نعم، جميع الوثائق التعليمية والرسمية يجب تصديقها للاستخدام في السعودية.
+            </div>
+        </details>
+
+        <details class="bg-white rounded-lg shadow-md overflow-hidden">
+            <summary class="px-6 py-4 cursor-pointer font-bold text-navy hover:bg-gray-50 transition-colors flex items-center justify-between">
+                <span>هل يمكنني تفويض شخص آخر؟</span>
+                <i class="fas fa-chevron-down text-gold"></i>
+            </summary>
+            <div class="px-6 py-4 text-gray-700 border-t border-gray-100">
+                نعم، يمكنك تفويض مكتبنا المعتمد أو شخص آخر بوكالة رسمية.
+            </div>
+        </details>
+    </div>
+
+    <div class="bg-gradient-to-r from-navy to-navy-dark text-white rounded-2xl p-10 text-center">
+        <h3 class="text-3xl font-bold mb-4">تحتاج تصديق شهاداتك؟</h3>
+        <p class="text-xl mb-6">وفّر وقتك وجهدك - دعنا ننجز التصديق نيابة عنك في 3-5 أيام!</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="https://wa.me/962789881009?text=مرحباً، أريد تصديق شهاداتي" 
+               class="bg-gold hover:bg-gold/90 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg text-lg">
+                <i class="fab fa-whatsapp ml-2"></i>
+                واتساب: 0789881009
+            </a>
+            <a href="tel:+962789881009" 
+               class="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all border-2 border-white/30 text-lg">
+                <i class="fas fa-phone ml-2"></i>
+                اتصل الآن
+            </a>
+        </div>
+    </div>
+</div>
+        `
     }
 };
 
