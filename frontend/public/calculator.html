@@ -97,15 +97,24 @@
                     <!-- Profession Category - Only for Work Visa -->
                     <div id="professionSection" class="space-y-4">
                         <div>
-                            <label class="block text-navy font-bold mb-3">تصنيف المهنة</label>
-                            <select id="professionCategory" onchange="handleProfessionChange()" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:ring-4 focus:ring-gold/10 outline-none">
-                                <option value="">-- اختر تصنيف المهنة --</option>
-                                <option value="domestic">عمالة منزلية (سائق، عامل منزلي، حارس، مربية)</option>
-                                <option value="ceo">رئيس تنفيذي / مدير عام</option>
-                                <option value="worker">عامل (ذكر أو أنثى)</option>
-                                <option value="engineer">مهندس</option>
-                                <option value="professional">مهن أخرى (تحتاج خبرة وبكالوريوس)</option>
+                            <label class="block text-navy font-bold mb-3">اختر تصنيف المهنة</label>
+                            <select id="professionCategory" onchange="handleProfessionChange()" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-gold focus:ring-4 focus:ring-gold/10 outline-none text-base">
+                                <option value="">-- حدد المهنة المطلوبة --</option>
+                                
+                                <optgroup label="🏠 مهن لا تحتاج اعتماد مهني">
+                                    <option value="domestic">عمالة منزلية (سائق خاص، عامل منزلي، حارس، مربية أطفال)</option>
+                                    <option value="worker">عمال (عامل تحميل، عامل مخزن، عامل بناء، إلخ)</option>
+                                    <option value="ceo">رئيس تنفيذي أو مدير عام</option>
+                                </optgroup>
+                                
+                                <optgroup label="🎓 مهن تحتاج اعتماد مهني">
+                                    <option value="engineer">مهندسين (جميع التخصصات - مع تصديق شهادات)</option>
+                                    <option value="professional">مهن إدارية ومهنية (محاسب، مدير، مسوّق، موارد بشرية، إلخ)</option>
+                                </optgroup>
                             </select>
+                            <p class="text-sm text-gray-600 mt-2">
+                                💡 <strong>ملاحظة:</strong> اختر التصنيف الذي يناسب مهنتك للحصول على تقدير دقيق
+                            </p>
                         </div>
                         
                         <!-- Experience Level - Only for Professional -->
