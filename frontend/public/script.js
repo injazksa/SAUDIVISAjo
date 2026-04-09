@@ -465,3 +465,202 @@ if (typeof module !== 'undefined' && module.exports) {
         printProfessionDocument
     };
 }
+
+// ======================
+// HERO SLIDER
+// ======================
+(function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5 seconds
+
+    function showSlide(index) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Add active class to current slide and dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Auto advance slides
+    let autoSlide = setInterval(nextSlide, slideInterval);
+
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            // Reset auto advance
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, slideInterval);
+        });
+    });
+
+    // Pause on hover
+    const heroSection = document.querySelector('#home');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', () => {
+            clearInterval(autoSlide);
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(nextSlide, slideInterval);
+        });
+    }
+})();
+
+// ======================
+// SCROLL ANIMATIONS
+// ======================
+(function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    const sections = document.querySelectorAll('section:not(#home)');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Observe all cards
+    const cards = document.querySelectorAll('.card-3d, .blog-card');
+    cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+        observer.observe(card);
+    });
+})();
+
+// ======================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// ======================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    });
+});
+
+// ======================
+// PARALLAX EFFECT ON HERO
+// ======================
+(function() {
+    const heroSection = document.querySelector('#home');
+    
+    if (heroSection) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxSpeed = 0.5;
+            
+            const slides = heroSection.querySelectorAll('.hero-slide img');
+            slides.forEach(slide => {
+                slide.style.transform = `translateY(${scrolled * parallaxSpeed}px) scale(1.1)`;
+            });
+        });
+    }
+})();
+
+// ======================
+// ADD HOVER EFFECTS TO BUTTONS
+// ======================
+(function() {
+    const buttons = document.querySelectorAll('a[href], button');
+    
+    buttons.forEach(button => {
+        // Add ripple class
+        if (!button.classList.contains('slider-dot')) {
+            button.classList.add('ripple');
+        }
+    });
+})();
+
+// ======================
+// NAVBAR BACKGROUND ON SCROLL
+// ======================
+(function() {
+    const nav = document.querySelector('nav');
+    
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-xl');
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.classList.remove('shadow-xl');
+                nav.style.background = 'white';
+            }
+        });
+    }
+})();
+
+// ======================
+// ANIMATED COUNTERS (for Stats)
+// ======================
+(function() {
+    const stats = document.querySelectorAll('.text-3xl, .text-4xl');
+    
+    const animateCounter = (element) => {
+        const target = parseInt(element.textContent.replace(/\D/g, ''));
+        if (isNaN(target)) return;
+        
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += step;
+            if (current < target) {
+                element.textContent = Math.floor(current) + '+';
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target + '+';
+            }
+        };
+        
+        updateCounter();
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const text = entry.target.textContent;
+                if (text.includes('+')) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    stats.forEach(stat => observer.observe(stat));
+})();
+
+console.log('🚀 Modern Animations & Interactions loaded successfully!');
+

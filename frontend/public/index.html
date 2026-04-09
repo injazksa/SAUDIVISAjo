@@ -177,13 +177,38 @@
         </div>
     </div>
     
-    <!-- Hero Section -->
+    <!-- Hero Section with Slider -->
     <section id="home" class="relative min-h-[90vh] flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://static.prod-images.emergentagent.com/jobs/9edf86e0-bd9d-4007-a13e-6e0731d6fd46/images/ae03e99be70bc3eed83d66beb9b21f44edf76502349122cc64ecda5b08d355f0.png" 
-                 alt="Modern Office" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-transparent"></div>
+        <!-- Hero Slider Background -->
+        <div class="hero-slider absolute inset-0 z-0">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1532995092664-7027dcede29f?q=85&w=1920" 
+                     alt="جوازات سفر" 
+                     class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60"></div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1586441133374-ed1cb4007a47?q=85&w=1920" 
+                     alt="جواز سفر وتذكرة طيران" 
+                     class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60"></div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <img src="https://images.unsplash.com/photo-1760581176635-2cea8ae93b5f?q=85&w=1920" 
+                     alt="مطار حديث" 
+                     class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/60"></div>
+            </div>
+        </div>
+        
+        <!-- Slider Navigation Dots -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+            <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
         </div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
