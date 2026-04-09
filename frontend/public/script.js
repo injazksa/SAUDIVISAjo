@@ -677,3 +677,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 console.log('🚀 Modern Animations & Interactions loaded successfully!');
 
+// ==========================================
+// INSTANT PAGE TRANSITIONS (Turbo-like)
+// ==========================================
+(function() {
+    // Prefetch links on hover for instant navigation
+    const prefetchedLinks = new Set();
+    
+    document.addEventListener('mouseover', (e) => {
+        const link = e.target.closest('a[href]');
+        if (link && link.hostname === window.location.hostname && !prefetchedLinks.has(link.href)) {
+            const prefetch = document.createElement('link');
+            prefetch.rel = 'prefetch';
+            prefetch.href = link.href;
+            document.head.appendChild(prefetch);
+            prefetchedLinks.add(link.href);
+        }
+    });
+    
+    // Disable transitions during scroll for smoothness
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+        document.body.classList.add('disable-transitions');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+            document.body.classList.remove('disable-transitions');
+        }, 100);
+    }, { passive: true });
+    
+})();
+
