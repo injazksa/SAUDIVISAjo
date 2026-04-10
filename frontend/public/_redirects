@@ -1,0 +1,15 @@
+# Netlify Redirects File
+# This ensures all routes work correctly
+
+# Keep all HTML pages working
+/professions    /professions.html    200
+/blog           /blog.html           200
+/calculator     /calculator.html     200
+/certificates   /certificates.html   200
+/professional   /professional.html   200
+/terms          /terms.html          200
+/privacy        /privacy.html        200
+/disclaimer     /disclaimer.html     200
+
+# 404 page
+/*              /404.html            404
