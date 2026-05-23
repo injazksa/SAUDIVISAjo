@@ -280,6 +280,36 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
+        /* Smart Search Button Fix */
+        .smart-search-action {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff9e6;
+            border: 1px dashed var(--accent-color);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-smart {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-smart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+
         /* ====== نمط الطباعة ====== */
         #printContent {
             display: none;
@@ -289,6 +319,7 @@
             * {
                 margin: 0;
                 padding: 0;
+                -webkit-print-color-adjust: exact;
             }
 
             body {
@@ -398,7 +429,7 @@
             .print-note {
                 margin-top: 40px;
                 padding: 20px;
-                background: #fff9e6;
+                background: #fff9e6 !important;
                 border: 1px solid #ffeeba;
                 border-radius: 10px;
             }
@@ -407,12 +438,14 @@
                 margin: 0 0 10px 0;
                 color: #856404;
                 font-size: 12pt;
+                font-weight: 800;
             }
             
             .print-note p {
                 margin: 0;
                 font-size: 10.5pt;
-                color: #555;
+                color: #333;
+                line-height: 1.5;
             }
             
             .print-footer {
@@ -437,71 +470,81 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h2>مكتب تأشيرات السعودية في الأردن</h2>
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h2>مكتب تأشيرات السعودية في الأردن</h2>
+                </a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة">
-                <span></span><span></span><span></span>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#home">الرئيسية</a></li>
-                <li><a href="index.html#services">الخدمات</a></li>
-                <li><a href="professions.html">المهن والأوراق</a></li>
-                <li><a href="index.html#contact">اتصل بنا</a></li>
-            </ul>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="work-visa.html">تأشيرة العمل</a></li>
+                    <li><a href="visit-visa.html">تأشيرة الزيارة</a></li>
+                    <li><a href="professions.html" class="active">المهن والأوراق</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="page-header">
-        <h1>المهن والأوراق المطلوبة</h1>
-        <p>ابحث عن مهنتك في قاعدة البيانات المعتمدة لاستعراض وطباعة قائمة المتطلبات الرسمية للسفارة السعودية</p>
-    </div>
+    <header class="page-header">
+        <h1>دليل المهن والأوراق المطلوبة</h1>
+        <p>ابحث عن مهنتك في قاعدة البيانات المعتمدة للسفارة السعودية وتعرف على المتطلبات الدقيقة لكل تخصص.</p>
+    </header>
 
     <div class="search-container">
         <div class="search-box">
-            <input type="text" id="search" class="search-input" placeholder="ابحث باسم المهنة أو رمزها (مثال: مهندس، 2141)...">
             <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search" class="search-input" placeholder="اكتب اسم المهنة أو كود المهنة هنا...">
         </div>
-        <div class="category-filters" id="filters">
+        
+        <div class="category-filters">
             <button class="filter-btn active" data-cat="all">الكل</button>
             <button class="filter-btn" data-cat="هندسية">هندسية</button>
             <button class="filter-btn" data-cat="طبية">طبية</button>
-            <button class="filter-btn" data-cat="مالية وإدارية">مالية وإدارية</button>
             <button class="filter-btn" data-cat="تقنية معلومات">تقنية معلومات</button>
-            <button class="filter-btn" data-cat="فنية وحرفية">فنية وحرفية</button>
-            <button class="filter-btn" data-cat="عمالة وسائقين">عمالة وسائقين</button>
-            <button class="filter-btn" data-cat="استقدام">استقدام</button>
-            <button class="filter-btn" data-cat="إدارية عليا">إدارية عليا</button>
+            <button class="filter-btn" data-cat="إدارية عليا">إدارية</button>
             <button class="filter-btn" data-cat="تعليمية">تعليمية</button>
-            <button class="filter-btn" data-cat="قانونية">قانونية</button>
-            <button class="filter-btn" data-cat="إعلامية">إعلامية</button>
-            <button class="filter-btn" data-cat="زراعية">زراعية</button>
+            <button class="filter-btn" data-cat="عمالة وسائقين">عمالة وسائقين</button>
+            <button class="filter-btn" data-cat="فنية وحرفية">فنية وحرفية</button>
         </div>
     </div>
 
     <div id="grid" class="grid-container">
         <div class="loading-spinner">
-            <i class="fas fa-spinner fa-spin"></i> جاري تحميل المهن...
+            <i class="fas fa-circle-notch fa-spin"></i> جاري تحميل قاعدة بيانات المهن...
         </div>
     </div>
 
-    <!-- هيكل الطباعة المخفي -->
+    <!-- محتوى الطباعة المخفي -->
     <div id="printContent">
-        <div class="print-date" id="printDateContainer"></div>
         <div class="print-header">
-            <h1>مكتب تأشيرات السعودية</h1>
-            <h2>المركز المعتمد لإنجاز المعاملات</h2>
-            <div class="print-contact">عمان - الدوار الأول | هاتف: 0789881009 | البريد: Visa@saudia-visa.com</div>
+            <h1>مكتب تأشيرات السعودية في الأردن</h1>
+            <h2>المتطلبات الرسمية لتجهيز المعاملة</h2>
+            <div class="print-contact">عمان - الدوار الأول | هاتف: 0789881009 | الموقع: saudia-visa.com</div>
         </div>
+        
+        <div id="printDateContainer" class="print-date"></div>
+        
         <div class="print-title-box">
-            <h3 id="printTitle"></h3>
+            <h3 id="printTitle">قائمة المتطلبات الرسمية</h3>
         </div>
-        <div class="print-list" id="printListContainer"></div>
-        <div class="print-note">
-            <h4>تنبيهات هامة:</h4>
-            <p>يرجى التأكد من مطابقة جميع البيانات في الأوراق الرسمية. المكتب غير مسؤول عن أي تأخير ناتج عن نقص في المتطلبات المذكورة أعلاه.</p>
+
+        <div id="printListContainer" class="print-list">
+            <!-- سيتم تعبئتها برمجياً -->
         </div>
+
+        <div id="externalNoteContainer" class="print-note">
+            <h4>⚠️ ملاحظات وزارة الخارجية (هامة جداً):</h4>
+            <p id="externalNoteText"></p>
+        </div>
+
         <div class="print-footer">
-            هذا المستند تم إنشاؤه آلياً - حقوق الطبع محفوظة © 2026
+            هذا المستند تم إنشاؤه آلياً بناءً على آخر تحديثات السفارة - حقوق الطبع محفوظة © 2026
         </div>
     </div>
 
@@ -519,7 +562,7 @@
         }
 
         // ==========================================
-        // إعدادات المتطلبات المحدثة (المسطرة الموحدة)
+        // إعدادات المتطلبات المحدثة
         // ==========================================
         const commonDocs = [
             "حسن سيرة وسلوك: من المخابرات العامة (التقديم إلكتروني عبر موقع المخابرات العامة أو من خلال تطبيق سند).",
@@ -529,23 +572,32 @@
 
         const militaryDocs = "الوثائق العسكرية: (مشروحات من القيادة العامة، كتاب من التعبئة / قسم شؤون الأفراد العنوان: طبربور دوار الدبابة - يكون معك دفتر خدمة العلم / بطاقة إنهاء الخدمة أو الإعفاء).";
 
+        // ملاحظات الخارجية (يتم فصلها برمجياً)
+        const externalNotes = {
+            'common': "يجب تصديق كافة الشهادات والوثائق من وزارة الخارجية الأردنية كخطوة أساسية قبل التقديم للمكتب.",
+            'eng': "الشهادات الجامعية وكشوف العلامات يجب أن تكون مصدقة من التعليم العالي ثم الخارجية الأردنية. كما يجب تصديق عقود العمل من الخارجية السعودية.",
+            'spec': "الشهادات الجامعية يجب أن تكون مصدقة من التعليم العالي والخارجية الأردنية. عقود العمل يجب تصديقها من الخارجية السعودية.",
+            'worker': "الشهادات المدرسية يجب تصديقها من مديرية التربية والتعليم ثم وزارة الخارجية الأردنية.",
+            'family': "عقود الزواج وشهادات الميلاد يجب أن تكون مصدقة من الأحوال المدنية ثم الخارجية الأردنية."
+        };
+
         const requirements = {
             'eng': [
                 ...commonDocs,
                 militaryDocs,
-                "الشهادات: إحضار الشهادة الجامعية (الأصل) وكشف العلامات الأصل (مصدقين تعليم عالي + خارجية).",
+                "الشهادات: إحضار الشهادة الجامعية (الأصل) وكشف العلامات الأصل.",
                 "شهادة الخبرة: خبرة لمدة سنتين بنفس مسمى التأشيرة مصدقة حسب الأصول.",
                 "الاعتماد المهني (QVP): الحصول على شهادة الاعتماد المهني عبر المنصة السعودية المعتمدة.",
                 "موقع مصادقة: تقديم طلب توثيق الشهادة الجامعية عبر منصة (مصادقة).",
                 "شهادة عضوية النقابة: شهادة عضوية سارية المفعول + مزاولة مهنة.",
-                "عقد عمل: من الشركة السعودية + خطاب إطلاع مختومين من الغرفة التجارية والخارجية السعودية."
+                "عقد عمل: من الشركة السعودية + خطاب إطلاع مختومين من الغرفة التجارية."
             ],
             'spec': [
                 ...commonDocs,
                 militaryDocs,
-                "الشهادات: إحضار الشهادة الجامعية (الأصل) وكشف العلامات الأصل (مصدقين تعليم عالي + خارجية).",
+                "الشهادات: إحضار الشهادة الجامعية (الأصل) وكشف العلامات الأصل.",
                 "شهادة الخبرة: خبرة لمدة سنة واحدة بنفس مسمى التأشيرة مصدقة حسب الأصول.",
-                "عقد عمل: مصدق من الخارجية السعودية."
+                "عقد عمل: من الشركة السعودية مختوم من الغرفة التجارية."
             ],
             'vip': [
                 "حسن سيرة وسلوك: من المخابرات العامة (التقديم إلكتروني أو تطبيق سند).",
@@ -558,22 +610,22 @@
             'skilled': [
                 ...commonDocs,
                 militaryDocs,
-                "الشهادة المدرسية: للحرفيين (ثانوية عامة ناجح مصدقة) وللعمالة العامة (أي صف مدرسي مصدق من التربية والخارجية).",
-                "عقد عمل: مصدق من الخارجية السعودية."
+                "الشهادة المدرسية: للحرفيين (ثانوية عامة ناجح مصدقة) وللعمالة العامة (أي صف مدرسي مصدق).",
+                "عقد عمل: من الشركة السعودية مختوم من الغرفة التجارية."
             ],
             'worker': [
                 ...commonDocs,
                 militaryDocs,
-                "الشهادة المدرسية: للحرفيين (ثانوية عامة ناجح مصدقة) وللعمالة العامة (أي صف مدرسي مصدق من التربية والخارجية).",
-                "عقد عمل: مصدق من الخارجية السعودية."
+                "الشهادة المدرسية: للحرفيين (ثانوية عامة ناجح مصدقة) وللعمالة العامة (أي صف مدرسي مصدق).",
+                "عقد عمل: من الشركة السعودية مختوم من الغرفة التجارية."
             ],
             'family': [
                 "حسن سيرة وسلوك: من المخابرات العامة (التقديم إلكتروني أو تطبيق سند).",
-                "شهادات الميلاد: شهادات الميلاد الأصلية للأولاد مصدقة من الأحوال والمدنية والخارجية.",
-                "إثبات الزواج: عقد الزواج أو شهادة الزواج أصلي مصدق (مختوم من قاضي القضاة والمحكمة الشرعية وخارجية أردنية).",
+                "شهادات الميلاد: شهادات الميلاد الأصلية للأولاد مصدقة من الأحوال المدنية.",
+                "إثبات الزواج: عقد الزواج أو شهادة الزواج أصلي مصدق (مختوم من قاضي القضاة والمحكمة الشرعية).",
                 "عمل فحص طبي: للزوجة (وللمولود فوق سن 16) من المختبر المعتمد.",
                 "الجواز والصور: جواز السفر الجديد + صور شخصية عدد 2 بخلفية بيضاء.",
-                "خلو موانع: للأنثى فوق سن 16 من المحكمة الشرعية وقاضي القضاة والخارجية الأردنية.",
+                "خلو موانع: للأنثى فوق سن 16 من المحكمة الشرعية وقاضي القضاة.",
                 "مستند التأشيرة: صورة عن تأشيرة الاستقدام.",
                 "موعد البصمة: حجز موعد لدى مكتب (تأشير)."
             ]
@@ -597,6 +649,17 @@
                 .trim();
         }
 
+        // دالة كشف الكتابات العبثية (Spam/Gibberish Detection)
+        function isGibberish(text) {
+            if (!text || text.length < 2) return false;
+            // إذا كان النص يحتوي على تكرار حرف أكثر من 3 مرات متتالية
+            if (/(.)\1{3,}/.test(text)) return true;
+            // إذا كان النص عبارة عن حروف عشوائية بدون معنى (تبسيطاً: حروف ساكنة كثيرة أو حروف لا تشكل كلمات عربية)
+            const randomChars = /^[asdfghjklqwertyuiopzxcvbnm]+$/i;
+            if (randomChars.test(text) && text.length > 5) return true;
+            return false;
+        }
+
         async function init() {
             try {
                 const response = await fetch('professions.json');
@@ -617,7 +680,6 @@
                     else if (p.category === 'إعلامية') type = 'spec';
                     else if (p.category === 'زراعية') type = 'eng';
                     
-                    // تخصيص VIP لمهن معينة
                     if (p.title && (p.title.includes('مدير عام') || p.title.includes('رئيس تنفيذي') || p.title.includes('مدير تنفيذي'))) type = 'vip';
                     
                     return { ...p, type };
@@ -642,7 +704,19 @@
         });
 
         function filterData() {
-            const searchVal = normalizeArabic(document.getElementById('search').value);
+            const rawValue = document.getElementById('search').value;
+            const searchVal = normalizeArabic(rawValue);
+            
+            // التعامل مع الكتابات العبثية
+            if (isGibberish(rawValue)) {
+                document.getElementById('grid').innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-robot" style="font-size: 3rem; color: #ccc; margin-bottom: 15px; display: block;"></i>
+                        <p>يبدو أنك كتبت نصاً غير مفهوم. يرجى كتابة اسم مهنة حقيقية (مثلاً: مهندس، مدير، عامل).</p>
+                    </div>`;
+                return;
+            }
+
             const filtered = allProfessions.filter(p => {
                 const matchesSearch = normalizeArabic(p.title).includes(searchVal) || p.code.includes(searchVal);
                 const matchesCat = currentFilter === 'all' || p.category === currentFilter;
@@ -656,7 +730,14 @@
             grid.innerHTML = '';
             
             if (list.length === 0) {
-                grid.innerHTML = '<div class="no-results">لا توجد مهن تطابق بحثك. جرب كلمات أخرى.</div>';
+                grid.innerHTML = `
+                    <div class="no-results">
+                        <p>لا توجد مهن تطابق بحثك.</p>
+                        <div class="smart-search-action">
+                            <span>هل مهنتك نادرة أو لم تجدها؟</span>
+                            <button class="btn-smart" onclick="handleSmartSearch()">لم تجد مهنتك؟ اضغط هنا للبحث الذكي</button>
+                        </div>
+                    </div>`;
                 return;
             }
 
@@ -693,12 +774,49 @@
             }
         }
 
+        // دالة البحث الذكي
+        function handleSmartSearch() {
+            const searchInput = document.getElementById('search');
+            const val = searchInput.value.trim();
+            
+            if (!val) {
+                alert("يرجى كتابة مسمى المهنة التي تبحث عنها أولاً.");
+                searchInput.focus();
+                return;
+            }
+
+            // محاكاة ذكاء اصطناعي للتعرف على نوع المهنة
+            let detectedType = 'spec'; // افتراضي
+            let message = "";
+
+            if (val.includes('مهندس') || val.includes('هندسه') || val.includes('مساح') || val.includes('رسام')) {
+                detectedType = 'eng';
+                message = `لقد ميزنا أن مهنة "${val}" تتبع للتخصصات الهندسية.`;
+            } else if (val.includes('طبيب') || val.includes('دكتور') || val.includes('ممرض') || val.includes('صيدلي') || val.includes('اخصائي')) {
+                detectedType = 'spec';
+                message = `لقد ميزنا أن مهنة "${val}" تتبع للتخصصات الطبية أو العلمية.`;
+            } else if (val.includes('عامل') || val.includes('سائق') || val.includes('بناء') || val.includes('نجار') || val.includes('حداد')) {
+                detectedType = 'worker';
+                message = `لقد ميزنا أن مهنة "${val}" تتبع للمهن الحرفية والعمالة.`;
+            } else if (val.includes('مدير') || val.includes('رئيس') || val.includes('مسؤول')) {
+                detectedType = 'vip';
+                message = `لقد ميزنا أن مهنة "${val}" تتبع للوظائف الإدارية العليا.`;
+            } else {
+                detectedType = 'spec';
+                message = `لم نجد المهنة بدقة، ولكن سنعرض لك المتطلبات العامة للمهن التخصصية.`;
+            }
+
+            if (confirm(`${message}\n\nهل تريد طباعة الأوراق المطلوبة لهذا النوع من المهن؟`)) {
+                printRequirement(detectedType, val);
+            }
+        }
+
         // ==========================================
         // نظام الطباعة المباشرة من المتصفح
         // ==========================================
         function printRequirement(type, title) {
-            console.log("Printing for:", type, title);
             const list = requirements[type] || requirements['spec'];
+            const note = externalNotes[type] || externalNotes['common'];
             const today = new Date().toLocaleDateString('ar-JO', { year: 'numeric', month: 'long', day: 'numeric' });
 
             // إزالة الإيموجي من العنوان
@@ -708,12 +826,14 @@
             const printDateContainer = document.getElementById('printDateContainer');
             const printTitle = document.getElementById('printTitle');
             const printListContainer = document.getElementById('printListContainer');
+            const externalNoteText = document.getElementById('externalNoteText');
             const printContent = document.getElementById('printContent');
 
             if (printDateContainer) printDateContainer.innerHTML = `تاريخ الإصدار: ${today}`;
             if (printTitle) printTitle.innerHTML = `قائمة المتطلبات الرسمية لمهنة: ${cleanTitle}`;
+            if (externalNoteText) externalNoteText.innerHTML = note;
             
-            // تعبئة قائمة المتطلبات مع إزالة الإيموجي
+            // تعبئة قائمة المتطلبات
             if (printListContainer) {
                 const listHTML = list.map(item => {
                     const cleanItem = removeEmojis(item);
@@ -739,6 +859,15 @@
 
         // تحميل البيانات عند فتح الصفحة
         document.addEventListener('DOMContentLoaded', init);
+
+        // Mobile Nav Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
     </script>
 </body>
 </html>
